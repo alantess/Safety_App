@@ -31,7 +31,8 @@ if (empty($pass)) {
 
 if (!$error) {
 
-    $password = hash('sha256', $pass); // password hashing using SHA256
+    $salt = "ThisIsASalt";
+    $password = hash('sha256', $pass.$salt); // password hashing using SHA256
     
     $query = "SELECT * FROM login where username = '$username' and password = $pass";
     $stid = oci_parse($conn, $query);
