@@ -9,9 +9,9 @@ $username = trim($_POST['username']);
 $username = strip_tags($username);
 $username = htmlspecialchars($username);
 
-// $email = trim($_POST['email']);
-// $email = strip_tags($email);
-// $email = htmlspecialchars($email);
+$email = trim($_POST['email']);
+$email = strip_tags($email);
+$email = htmlspecialchars($email);
 
 $pass = trim($_POST['password']);
 $pass = strip_tags($pass);
@@ -39,20 +39,21 @@ if (!$error) {
     oci_execute($stid);
     $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
 
-    // if($row['password'] == $password){
-    if($row > 1){
+    if($row['PASSWORD'] == $pass){
+    // if($row > 1){
         
-        $_SESSION['username'] = $row['username'];
+        $_SESSION['username'] = $row['USERNAME'];
         $_SESSION['loggedin']=true;
         header("location:home.php");
         echo [$row];
     }else{
         $errMSG = "Incorrect Credentials, Try again...";
+        header('location: index.php');
     }
 
-}else{
-    header('location:index.php');
 }
+
+
 
 
 
