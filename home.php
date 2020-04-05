@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-// if (!isset($_SESSION['username'])) {
-//     $_SESSION['msg'] = "You must log in first";
-//     header('location: index.php');
-// }
-// if (isset($_GET['logout'])) {
-//     session_destroy();
-//     unset($_SESSION['username']);
-//     header("location: index.php");
-// }
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: index.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
 
 
 // Check if the user is logged in, if not then redirect him to login page
@@ -17,9 +17,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: index.php");
     exit;
 }
-
-
-
 
 
 ?>
@@ -79,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <a class="nav-item nav-link" href="#">Classes</a>
                     <a class="nav-item nav-link" href="#">Settings</a>
                     <a class="nav-item nav-link" href="#">Help</a>
-                    <a class="nav-item nav-link" href="#">Logout</a>
+                    <a class="nav-item nav-link" href="home.php?logout='1'" id=" logout">Logout</a>
                 </div>
             </div>
         </nav>
