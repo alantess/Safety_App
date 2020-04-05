@@ -99,11 +99,16 @@ if (isset($_SESSION['user']) != "") {
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password1" name="password1">
                     </div>
                     <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="password2" name="password2">
+                    </div>
+
+                    <div class="form-group">
                         <label for="firstname">First Name:</label>
-                        <input type="text" class="form-control" id="firtname" name="firstname" required>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required>
                     </div>
                     <div class="form-group">
                         <label for="lastname">Last Name:</label>
