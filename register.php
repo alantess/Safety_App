@@ -39,7 +39,8 @@ if (empty($pass)) {
 $salt = "ThisIsASalt";
 $password = hash('sha256', $pass . $salt); // password hashing using SHA256
 
-$query = "SELECT * FROM login where username = '$username' and email ='$email'";
+
+$query = "SELECT * FROM login WHERE username = '$username' and email ='$email'";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
@@ -47,38 +48,52 @@ $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
 // check if return in true
 if($row){
     if($row['USERNAME'] === $username){
+        $error = true;
         $errMSG = "Username already exists";
     }
-    if($row['EMAIL'] ===$email){
+    if($row['EMAIL'] === $email){
+        $error = true;
         $errMSG = 'Email aready exists';
     }
 }
 // query statement to create a new request
 oci_free_statement($stid);
 
-if(!$error){
+// $query = "SELECT * FROM login";
+// $stid = oci_parse($conn,$query);
+// oci_execute($stid);
 
+
+if(!$error){
     // still working on inserting new user to the database
-    $query = "INSERT INTO login(USERNAME,EMAIL, PASSWORD) 
-               VALUES(':usr', ':email', ':pass')";
+    $query = "INSERT INTO login(USER_ID,USERNAME,PASSWORD,EMAIL) 
+               VALUES(:id,:usr, :password, :email)";
     $stid = oci_parse($conn,$query);
-    oci_bind_by_name($stid,':usr',$username);
-    oci_bind_by_name($stid,':email',$email);
-    oci_bind_by_name($stid,':pass',$password);
+    oci_bind_by_name($stid,":id",$id);
+    oci_bind_by_name($stid,":usr",$username);
+    oci_bind_by_name($stid,":password",$pass);
+    oci_bind_by_name($stid, ":email", $email);
     oci_execute($stid);
+    print $username ;
+    print $pass ;
+    print $email;
     
+    print "created new user";
     $_SESSION['username'] = $username;
     $_SESSION['loggedin'] = true;
-    header('location: home.php');
+
+    // free the query and close the oracle connection
+    oci_free_statement($stid);
+    // header('location: home.php');
+
 
 }else{
-    header('location: index.php');
+    // header('location: index.php');
     $errMSG = "Incorrect Credentials, Try again...";
 }
 
 
-// free the query and close the oracle connection
-oci_free_statement($stid);
+
 oci_close($conn);
 
 ?>

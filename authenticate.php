@@ -19,15 +19,6 @@ if (empty($username)) {
     $userError = "Please enter your user name.";
 }
 
-// setting up emial error
-// if(empty($email)){
-//     $error = true;
-//     $emailError = "Please enter your Email Address";
-// } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//     $error = true;
-//     $emailError = "Please enter a valid email.";
-// }
-
 
 if (empty($pass)) {
     $error = true;
