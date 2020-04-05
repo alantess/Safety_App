@@ -37,27 +37,33 @@ if (isset($_SESSION['user']) != "") {
     <!--Add an API key-->
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
-    
+
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
 
     <!--print error msg to screen -->
-    <?php if(isset($userError) || isset($errMSG) || isset($passError)) { ?>
-              <div role="alert" class="alert  alert-danger  text-center">
-            <?php 
-              if(isset($userError)) { echo $userError; }  
-              if(isset($passError)) { echo $passError; }
-              if(isset($errMSG)) { echo $errMSG; } 
+    <?php if (isset($userError) || isset($errMSG) || isset($passError)) { ?>
+        <div role="alert" class="alert  alert-danger  text-center">
+        <?php
+        if (isset($userError)) {
+            echo $userError;
+        }
+        if (isset($passError)) {
+            echo $passError;
+        }
+        if (isset($errMSG)) {
+            echo $errMSG;
+        }
     }
-            ?>
-          </div>
+        ?>
+        </div>
 
 
-    <header>
-    <!-- Top navbar  -->
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header>
+            <!-- Top navbar  -->
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,53 +82,61 @@ if (isset($_SESSION['user']) != "") {
         </nav> -->
 
 
-    </header>
+        </header>
 
-    <!-- <div id="content" data-target="#navbarNavAltMarkup"></div> -->
-    <div id="content" data-target="#navbarNavAltMarkup">
-    <!-- register modal -->
-        <article class="card-body">
-            <form id="login-form" class="modal" role="form" action="register.php" method="POST">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for ="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="signup btn btn-primary btn-block">Sign Up</button>
-                </div>
-                </form>
-            <div class="g-signin2 float-right" data-onsuccess="onSignIn"></div>
-            <a href="#login-form" class="float-right btn btn-outline-primary id" rel="modal:open"> Sign up </a>
-            
-            <h4 class="card-title mb-4 mt-1"> Sign in </h4>
-            <!--user login -->
-            <form role="form" action="authenticate.php" method="post">
-                <div class="form-group">
-                    <label> Your Username </label>
-                    <input id="username" name="username" class="form-control" placeholder="Username" type="text" required>
-                </div>
-                <div class="form-group">
-                    <a class="float-right" href="#"> Forgot? </a>
-                    <label> Your password </label>
-                    <input id="password" name="password" class="form-control" placeholder="******" type="password" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block" value="Submit"> Login </button>
+        <!-- <div id="content" data-target="#navbarNavAltMarkup"></div> -->
+        <div id="content" data-target="#navbarNavAltMarkup">
+            <!-- register modal -->
+            <article class="card-body">
+                <form id="login-form" class="modal" role="form" action="register.php" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" class="form-control" id="firtname" name="firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="signup btn btn-primary btn-block">Sign Up</button>
                     </div>
                 </form>
-        </article>
-    </div>'
-    </div>
-    
-    <!-- <footer>
+                <div class="g-signin2 float-right" data-onsuccess="onSignIn"></div>
+                <a href="#login-form" class="float-right btn btn-outline-primary id" rel="modal:open"> Sign up </a>
+
+                <h4 class="card-title mb-4 mt-1"> Sign in </h4>
+                <!--user login -->
+                <form role="form" action="authenticate.php" method="post">
+                    <div class="form-group">
+                        <label> Your Username </label>
+                        <input id="username" name="username" class="form-control" placeholder="Username" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <a class="float-right" href="#"> Forgot? </a>
+                        <label> Your password </label>
+                        <input id="password" name="password" class="form-control" placeholder="******" type="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block" value="Submit"> Login </button>
+                    </div>
+                </form>
+            </article>
+        </div>'
+        </div>
+
+        <!-- <footer>
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Home</a>
             <a class="navbar-brand" href="#">Cal.</a>

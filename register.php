@@ -17,6 +17,9 @@ $pass = trim($_POST['password']);
 $pass = strip_tags($pass);
 $pass = htmlspecialchars($pass);
 
+$firstname = $_POST('firstname');
+$lastname = $_Post('lastname');
+
 if (empty($username)) {
     $error = true;
     $userError = "Please enter your user name.";
@@ -40,7 +43,7 @@ $salt = "ThisIsASalt";
 $password = hash('sha256', $pass . $salt); // password hashing using SHA256
 
 
-$query = "SELECT * FROM login WHERE username = '$username' and email ='$email'";
+$query = "SELECT * FROM login2 WHERE username = '$username' and email ='$email'";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
@@ -66,17 +69,17 @@ oci_free_statement($stid);
 
 if(!$error){
     // still working on inserting new user to the database
-    $query = "INSERT INTO login(USER_ID,USERNAME,PASSWORD,EMAIL) 
-               VALUES(:id,:usr, :password, :email)";
+    $query = "INSERT INTO login2(USERNAME,PASSWORD,EMAIL) 
+               VALUES(:usr, :password, :email)";
     $stid = oci_parse($conn,$query);
-    oci_bind_by_name($stid,":id",$id);
+    // oci_bind_by_name($stid,":id",$id);
     oci_bind_by_name($stid,":usr",$username);
-    oci_bind_by_name($stid,":password",$pass);
+    oci_bind_by_name($stid,":password",$password);
     oci_bind_by_name($stid, ":email", $email);
     oci_execute($stid);
-    print $username ;
-    print $pass ;
-    print $email;
+    echo $username;
+    echo $pass ;
+    echo $email;
     
     print "created new user";
     $_SESSION['username'] = $username;
