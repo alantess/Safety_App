@@ -23,7 +23,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- bootstrap code -->
@@ -61,7 +60,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="">Alert</a>
+            <a class="navbar-brand" href="alert.php" id="alert">Alert</a>
             <a class="navbar-brand" href="">Emergency</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
@@ -74,16 +73,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </div>
             </div>
         </nav>
-
-
     </header>
 
-    <!-- <div id="content" data-target="#navbarNavAltMarkup"></div> -->
     <div id="content" data-target="#navbarNavAltMarkup">
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
-
     </div>
-
 
     <footer>
         <nav class="navbar navbar-dark bg-dark">
@@ -94,6 +88,5 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </nav>
     </footer>
 </body>
-
 
 </html>
