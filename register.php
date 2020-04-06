@@ -63,12 +63,12 @@ if($pass != $pass2){
     echo $passError;
 }
 
-
+// salt and hash
 $salt = "ThisIsASalt";
 $password = hash('sha256', $pass . $salt); // password hashing using SHA256
 
 
-$query = "SELECT * FROM login2 WHERE username = '$username'";
+$query = "SELECT * FROM login WHERE username = '$username'and email ='$email'";
 $stid = oci_parse($conn, $query);
 oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
@@ -79,36 +79,37 @@ if($row){
         $error = true;
         $errMSG = "Username already exists";
     }
-    // if($row['EMAIL'] === $email){
-    //     $error = true;
-    //     $errMSG = 'Email aready exists';
-    // }
+    if($row['EMAIL'] === $email){
+        $error = true;
+        $errMSG = 'Email aready exists';
+    }
 }
 // query statement to create a new request
 oci_free_statement($stid);
 
 if(!$error){
     // still working on inserting new user to the database
-    $query = "INSERT INTO login2(USERNAME,PASSWORD) 
-               VALUES(:usr, :password)";
+    $query = "INSERT INTO login(USERNAME,PASSWORD,EMAIL) 
+               VALUES(:usr, :password,:email)";
     $stid = oci_parse($conn,$query);
-    // oci_bind_by_name($stid,":id",$id);
     oci_bind_by_name($stid,":usr",$username);
     oci_bind_by_name($stid,":password",$password);
-    
+    oci_bind_by_name($stid, ':email', $email);
+
     oci_execute($stid);
     echo $username;
     echo $pass ;
     echo $email;
 
-    oci_free_statement($stid);
-    $query = "INSERT INTO USERS(FNAME,LNAME,EMAIL)
-                VALUES(:fname,:lname,:email)";
-    $stid = oci_parse($conn,$query);
-    oci_bind_by_name($stid,":fname",$firstname);
-    oci_bind_by_name($stid,":lname",$lastname);
-    oci_bind_by_name($stid,":email", $email);
-    oci_execute($stid);
+
+    // oci_free_statement($stid);
+    // $query = "INSERT INTO USERS(FNAME,LNAME,EMAIL)
+    //             VALUES(:fname,:lname,:email)";
+    // $stid = oci_parse($conn,$query);
+    // oci_bind_by_name($stid,":fname",$firstname);
+    // oci_bind_by_name($stid,":lname",$lastname);
+    // oci_bind_by_name($stid,":email", $email);
+    // oci_execute($stid);
 
     print "created new user";
     $_SESSION['username'] = $username;
@@ -124,8 +125,6 @@ if(!$error){
     $errMSG = "Incorrect Credentials, Try again...";
     echo $errMSG;
 }
-
-
 
 oci_close($conn);
 

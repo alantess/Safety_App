@@ -33,13 +33,14 @@ if (!$error) {
     $password = hash('sha256', $pass.$salt); // password hashing using SHA256
     
     // oracle query
-    $query = "SELECT * FROM login where username = '$username' and password = $pass";
+    $query = "SELECT * FROM login where username = '$username' and password = '$password'";
     $stid = oci_parse($conn, $query);
     oci_execute($stid);
-    $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
+    $row = oci_fetch_array($stid, OCI_ASSOC);
 
+    echo $row['PASSWORD'];
     // check query return
-    if($row['PASSWORD'] == $pass){
+    if($row['PASSWORD'] === $password){
         $_SESSION['username'] = $row['USERNAME'];
         $_SESSION['loggedin']=true;
         header("location:home.php");
