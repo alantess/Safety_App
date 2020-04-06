@@ -89,12 +89,14 @@ oci_free_statement($stid);
 
 if(!$error){
     // still working on inserting new user to the database
-    $query = "INSERT INTO login(USERNAME,PASSWORD,EMAIL) 
-               VALUES(:usr, :password,:email)";
+    $query = "INSERT INTO login(USERNAME,PASSWORD,EMAIL,FNAME,LNAME) 
+               VALUES(:usr, :password,:email,:fname,:lname)";
     $stid = oci_parse($conn,$query);
     oci_bind_by_name($stid,":usr",$username);
     oci_bind_by_name($stid,":password",$password);
-    oci_bind_by_name($stid, ':email', $email);
+    oci_bind_by_name($stid,':email', $email);
+    oci_bind_by_name($stid,":fname",$firstname);
+    oci_bind_by_name($stid,":lname",$lastname);    
 
     oci_execute($stid);
     echo $username;
@@ -102,26 +104,17 @@ if(!$error){
     echo $email;
 
 
-    // oci_free_statement($stid);
-    // $query = "INSERT INTO USERS(FNAME,LNAME,EMAIL)
-    //             VALUES(:fname,:lname,:email)";
-    // $stid = oci_parse($conn,$query);
-    // oci_bind_by_name($stid,":fname",$firstname);
-    // oci_bind_by_name($stid,":lname",$lastname);
-    // oci_bind_by_name($stid,":email", $email);
-    // oci_execute($stid);
-
     print "created new user";
     $_SESSION['username'] = $username;
     $_SESSION['loggedin'] = true;
 
     // free the query and close the oracle connection
     oci_free_statement($stid);
-    // header('location: home.php');
+    header('location: home.php');
 
 
 }else{
-    // header('location: index.php');
+    header('location: index.php');
     $errMSG = "Incorrect Credentials, Try again...";
     echo $errMSG;
 }
