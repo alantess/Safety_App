@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: index.php');
-}
+// if (!isset($_SESSION['username'])) {
+//     $_SESSION['msg'] = "You must log in first";
+//     header('location: index.php');
+// }
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
