@@ -41,6 +41,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <!--Add an API key-->
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="fetch.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
@@ -60,7 +63,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="alert.php" id="alert">Alert</a>
+            <a class="navbar-brand" href="#" id="alert">Alert</a>
             <a class="navbar-brand" href="">Emergency</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
@@ -76,7 +79,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </header>
 
     <div id="content" data-target="#navbarNavAltMarkup">
+        <div id="banner"></div>
+
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
+
+        <button id="alertOff">Dismiss</button>
     </div>
 
     <footer>
