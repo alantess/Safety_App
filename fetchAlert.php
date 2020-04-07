@@ -11,22 +11,56 @@ if(isset($_POST['alert'])){
     if($result > 0){
         if($result['CAT'] == 0){
             echo "Shooter on campus";
-            $output ='Shooter on campus';
+            $output .='
+            <div class="container">
+	            <div class="row">
+	            <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Active Shooter on Campus!</p></marquee>
+                    </div>
+	            </div>
+            </div>';
 
         }
-        if($result['CAt'] == 1){
+        if($result['CAT'] == 1){
             echo "fire on campus";
-            
+            $output .= '
+            <div class="container">
+	            <div class="row">
+	            <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Fire on Campus! Evacuate Immediately </p></marquee>
+                    </div>
+	            </div>
+            </div>';
+
         }
-        if ($result['CAt'] == 2) {
-            echo "natural on campus";
-            
+        if ($result['CAT'] == 2) {
+            echo "Natural on campus";
+            $output .= '
+            <div class="container">
+	            <div class="row">
+	            <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Tornado on Campus! Take cover</p></marquee>
+                    </div>
+	            </div>
+            </div>';
         }
-        if ($result['CAt'] == 3) {
+        if ($result['CAT'] == 3) {
             echo "Medical Alert";
             
         }
-        if ($result['CAt'] == 4) {
+        if ($result['CAT'] == 4) {
             echo "Fight Alert";
             
         }
@@ -38,8 +72,6 @@ if(isset($_POST['alert'])){
 
     }
 
-
-    
 }
 
 
