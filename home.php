@@ -13,6 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +64,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#" id="alert">Alert</a>
+            <!-- <a class="navbar-brand" href="alert.php?alert.php" id="alert">Alert</a> -->
+            <a class="navbar-brand" type="submit" href="alert.php" name='alertButton'>Alert<a>
             <a class="navbar-brand" href="">Emergency</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
