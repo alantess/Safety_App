@@ -65,7 +65,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- <a class="navbar-brand" href="alert.php?alert.php" id="alert">Alert</a> -->
-            <a class="navbar-brand" type="submit" href="alert.php" name='alertButton'>Alert<a>
+            <p class="navbar-brand" type="submit" href="#" name='alertButton'>Alert<p>
             <a class="navbar-brand" href="">Emergency</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">

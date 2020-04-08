@@ -2,10 +2,12 @@
 include('db_connect.php');
 session_start();
 
+if(isset($_POST['view'])){
+
 
     if ($_POST['view']!='') {
 
-        echo 'alert is set';
+      
         $alert = 1;
         $t_start = date(DATE_RFC822);
         $query = "INSERT INTO ALERT_LOG(CAT,T_START) 
@@ -16,18 +18,19 @@ session_start();
         
         oci_execute($stid);
         oci_free_statement($stid);
+
     }else{
 
-        echo 'this is a fetch test';
-        $query = "SELECT * FROM ALERT_LOG WHERE T_END = NULL";
+    
+        $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
         $stid = oci_parse($conn, $query);
         oci_execute($stid);
         $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
         $output = '';
 
+
         if ($result > 0) {
             if ($result['CAT'] == 0) {
-                echo "Shooter on campus";
                 $output .= '
         <div class="container">
             <div class="row">
@@ -42,7 +45,9 @@ session_start();
         </div>';
             }
             if ($result['CAT'] == 1) {
-                echo "fire on campus";
+                // echo "fire on campus";
+                // $testResult= 'this a php test';
+
                 $output .= '
         <div class="container">
             <div class="row">
@@ -57,7 +62,7 @@ session_start();
         </div>';
             }
             if ($result['CAT'] == 2) {
-                echo "Natural on campus";
+                // echo "Natural on campus";
                 $output .= '
         <div class="container">
             <div class="row">
@@ -72,10 +77,10 @@ session_start();
         </div>';
             }
             if ($result['CAT'] == 3) {
-                echo "Medical Alert";
+                // echo "Medical Alert";
             }
             if ($result['CAT'] == 4) {
-                echo "Fight Alert";
+                // echo "Fight Alert";
             }
 
             $data = array(
@@ -86,9 +91,9 @@ session_start();
 
         oci_free_statement($stid);
     }
-    oci_close($conn);
 
-
+        oci_close($conn);
+}
 
 if(isset($_POST['alertOFF'])){
     echo 'alert is off';

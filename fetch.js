@@ -3,21 +3,22 @@ $(document).ready(function () {
     // updating the view with notifications using ajax
     function load_unseen_notification(view = '') {
 
-        console.log('load unseen notification called');
+        // console.log('load unseen notification called');
         $ .ajax({
             url: "alert.php",
             type: "POST",
-            data: {view:view},
+            data:{view:view},
             dataType: "json",
             success: function (data) {
-                console.log('notification')
+                console.log(data.alert);
                 $('#banner').html(data.alert);
-                view = '';
             }
         });
     }
 
-    load_unseen_notification();
+
+
+    // load_unseen_notification();
     // submit form and get new records
     
     // load new notifications
