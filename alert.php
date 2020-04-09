@@ -4,10 +4,7 @@ session_start();
 
 if(isset($_POST['view'])){
 
-
     if ($_POST['view']!='') {
-
-      
         $alert = 1;
         $t_start = date(DATE_RFC822);
         $query = "INSERT INTO ALERT_LOG(CAT,T_START) 
@@ -21,8 +18,10 @@ if(isset($_POST['view'])){
 
     }else{
 
-    
-        $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
+        // $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
+
+        $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
+
         $stid = oci_parse($conn, $query);
         oci_execute($stid);
         $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
@@ -45,9 +44,6 @@ if(isset($_POST['view'])){
         </div>';
             }
             if ($result['CAT'] == 1) {
-                // echo "fire on campus";
-                // $testResult= 'this a php test';
-
                 $output .= '
         <div class="container">
             <div class="row">
@@ -56,7 +52,7 @@ if(isset($_POST['view'])){
                 <span aria-hidden="true">×</span>
                 <span class="sr-only">Close</span>
                 </button>
-                <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Fire on Campus! Evacuate Immediately </p></marquee>
+                <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Fire on Campus! Evacuate Immediately</p></marquee>
                 </div>
             </div>
         </div>';
@@ -98,7 +94,8 @@ if(isset($_POST['view'])){
 if(isset($_POST['alertOFF'])){
     echo 'alert is off';
     $t_end = date(DATE_RFC822);
-    $query = "INSERT INTO ALERT_LOG(T_END) VALUES(:t_end) WHERE T_END = NULL";
+    // $query = "INSERT INTO ALERT_LOG(T_END) VALUES(:t_end) WHERE T_END IS NULL";
+    $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
     $stid = oci_parse($onn,$query);
     oci_bind_by_name($stid,':t_end',$t_end);
     oci_execute($stid);
@@ -107,7 +104,6 @@ if(isset($_POST['alertOFF'])){
     header('location: home.php');
     oci_close($conn);
 }
-
 
 
 ?>
