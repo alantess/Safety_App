@@ -32,4 +32,17 @@ $(document).ready(function () {
         load_unseen_notification();;
         console.log('hello');
     }, 5000);
+
+    $('#dismiss').on('click',function (){
+        $.ajax({
+            url: "alert.php",
+            type: "POST",
+            data: { alert: 'alertOFF' },
+            dataType: "json",
+            success: function () {
+                // console.log(data.alert);
+                $('#banner').hide();
+            }
+        });
+    });
 });

@@ -71,7 +71,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </button>
           
             <!-- Notification Bell Icon for Alerts -->
-            <a href="alert.php" class="navbar-brand" id="alert"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span></a>
+            <a href="#" class="navbar-brand" id="alert"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span></a>
             <a class="navbar-brand" href="">Emergency</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
@@ -91,7 +91,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
 
-        <button id="alertOff">Dismiss</button>
+        <button id="dismiss">Dismiss</button>
     </div>
 
     <footer>

@@ -92,16 +92,15 @@ if(isset($_POST['view'])){
 }
 
 if(isset($_POST['alertOFF'])){
-    echo 'alert is off';
     $t_end = date(DATE_RFC822);
     // $query = "INSERT INTO ALERT_LOG(T_END) VALUES(:t_end) WHERE T_END IS NULL";
-    $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
+    $query = "INSERT INTO ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
     $stid = oci_parse($onn,$query);
     oci_bind_by_name($stid,':t_end',$t_end);
     oci_execute($stid);
     oci_free_statement($stid);
 
-    header('location: home.php');
+    // header('location: home.php');
     oci_close($conn);
 }
 
