@@ -60,30 +60,6 @@ if (isset($_SESSION['user']) != "") {
         ?>
         </div>
 
-
-        <header>
-            <!-- Top navbar  -->
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="">Alert</a>
-            <a class="navbar-brand" href="">Emergency</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#" id="attendanceT">Attendance</a>
-                    <a class="nav-item nav-link" href="#" id="messagesT">Messages</a>
-                    <a class="nav-item nav-link" href="#">Classes</a>
-                    <a class="nav-item nav-link" href="#">Settings</a>
-                    <a class="nav-item nav-link" href="#">Help</a>
-                    <a class="nav-item nav-link" href="#">Logout</a>
-                </div>
-            </div>
-        </nav> -->
-
-
-        </header>
-
         <!-- <div id="content" data-target="#navbarNavAltMarkup"></div> -->
         <div id="content" data-target="#navbarNavAltMarkup">
             <!-- register modal -->
@@ -140,15 +116,7 @@ if (isset($_SESSION['user']) != "") {
             </article>
         </div>'
         </div>
-
-        <!-- <footer>
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Home</a>
-            <a class="navbar-brand" href="#">Cal.</a>
-            <a class="navbar-brand" href="#" id="attendanceB">Att.</a>
-            <a class="navbar-brand" href="#" id="messagesB">Messages</a>
-        </nav>
-    </footer> -->
+        
 </body>
 
 
