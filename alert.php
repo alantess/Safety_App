@@ -69,6 +69,7 @@ if(isset($_POST['view'])){
         
 
             if ($result > 0){
+
                 switch($result['CAT']){
                     case 0 :
                         $output .= '
@@ -121,7 +122,6 @@ if(isset($_POST['view'])){
                     default:
                 
                 }
-
                 
             }
 
