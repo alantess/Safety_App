@@ -10,7 +10,7 @@ $(document).ready(function () {
             data:{view:view},
             dataType: "json",
             success: function (data) {
-                console.log(data.alert);
+                console.log('ajax call was success');
                 $('#banner').html(data.alert);
             }
         });
@@ -25,7 +25,13 @@ $(document).ready(function () {
     $('#alert').on('click', function () {
         
         // $('.count').html('');
-        load_unseen_notification('yes');
+        load_unseen_notification('YES');
+    });
+
+    $('#dismiss').click(function () {
+        console.log('dismiss');
+        // $('.count').html('');
+        load_unseen_notification('NO');
     });
 
     setInterval(function () {
@@ -33,16 +39,18 @@ $(document).ready(function () {
         console.log('hello');
     }, 5000);
 
-    $('#dismiss').on('click',function (){
-        $.ajax({
-            url: "alert.php",
-            type: "POST",
-            data: { alert: 'alertOFF' },
-            dataType: "json",
-            success: function () {
-                // console.log(data.alert);
-                $('#banner').hide();
-            }
-        });
-    });
+
+    // $('#dismiss').on('click',function (view2){
+    //     $.ajax({
+    //         url: "alert.php",
+    //         type: "POST",
+    //         data: {view2:view2},
+    //         dataType: "json",
+    //         success: function () {
+    //             // console.log(data.alert);
+    //             console.log('stopping alert system');
+    //             $('#banner').hide();
+    //         }
+    //     });
+    // });
 });

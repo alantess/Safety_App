@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_POST['view'])){
 
-    if ($_POST['view']!='') {
+    if ($_POST['view']=='YES') {
         $alert = 1;
         $t_start = date(DATE_RFC822);
         $query = "INSERT INTO ALERT_LOG(CAT,T_START) 
@@ -16,20 +16,31 @@ if(isset($_POST['view'])){
         oci_execute($stid);
         oci_free_statement($stid);
 
+    }else if($_POST['view']== 'NO'){
+
+        $t_end = date(DATE_RFC822);
+        $_seen = 'NO';
+        $query = "UPDATE ALERT_LOG SET T_END = :t_end WHERE T_END IS NULL";
+        $stid = oci_parse($conn, $query);
+        oci_bind_by_name($stid, ':t_end', $t_end);
+        oci_execute($stid);
+        oci_free_statement($stid);
+
+        // header('location: home.php');
     }else{
 
         // $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
 
-        $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
+        $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)and IS_ACT ='Y'";
 
         $stid = oci_parse($conn, $query);
         oci_execute($stid);
         $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
         $output = '';
 
-
-        if ($result > 0) {
-            if ($result['CAT'] == 0) {
+        if ($result > 0){
+        switch($result['CAT']){
+            case 0 :
                 $output .= '
         <div class="container">
             <div class="row">
@@ -42,8 +53,9 @@ if(isset($_POST['view'])){
                 </div>
             </div>
         </div>';
-            }
-            if ($result['CAT'] == 1) {
+            break;
+
+            case 1:
                 $output .= '
         <div class="container">
             <div class="row">
@@ -56,9 +68,9 @@ if(isset($_POST['view'])){
                 </div>
             </div>
         </div>';
-            }
-            if ($result['CAT'] == 2) {
-                // echo "Natural on campus";
+            break;
+
+            case 2:
                 $output .= '
         <div class="container">
             <div class="row">
@@ -71,38 +83,27 @@ if(isset($_POST['view'])){
                 </div>
             </div>
         </div>';
-            }
-            if ($result['CAT'] == 3) {
-                // echo "Medical Alert";
-            }
-            if ($result['CAT'] == 4) {
-                // echo "Fight Alert";
-            }
-
-            $data = array(
-                'alert' => $output
-            );
-            echo json_encode($data);
+            break;
+            case 3:
+            break;
+            case 4:
+            break;
+            default:
+        
         }
 
+        $data = array(
+            'alert' => $output
+        );
+        echo json_encode($data);
+    }
+        
         oci_free_statement($stid);
     }
 
         oci_close($conn);
 }
 
-if(isset($_POST['alertOFF'])){
-    $t_end = date(DATE_RFC822);
-    // $query = "INSERT INTO ALERT_LOG(T_END) VALUES(:t_end) WHERE T_END IS NULL";
-    $query = "INSERT INTO ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
-    $stid = oci_parse($onn,$query);
-    oci_bind_by_name($stid,':t_end',$t_end);
-    oci_execute($stid);
-    oci_free_statement($stid);
-
-    // header('location: home.php');
-    oci_close($conn);
-}
 
 
 ?>
