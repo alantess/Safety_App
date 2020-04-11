@@ -72,7 +72,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           
             <!-- Notification Bell Icon for Alerts -->
             <a href="#" class="navbar-brand" id="alert"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span></a>
-            <a class="navbar-brand" href="">Emergency</a>
+            <button type="button" href="#" class="btn btn-danger" id="emergency">Emergency</button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#" id="attendanceT">Attendance</a>

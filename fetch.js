@@ -5,7 +5,7 @@ $(document).ready(function () {
 
         // console.log('load unseen notification called');
         $ .ajax({
-            url: "alert.php",
+            url: "emergency.php",
             type: "POST",
             data:{view:view},
             dataType: "json",
@@ -27,7 +27,7 @@ $(document).ready(function () {
     // submit form and get new records
     
     // load new notifications
-    $('#alert').on('click', function () {
+    $('#emergency').on('click', function () {
         
         // $('.count').html('');
         load_unseen_notification('YES');
