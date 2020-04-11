@@ -8,7 +8,7 @@ if(isset($_POST['view'])){
 
     if ($_POST['view']=='YES') {
         
-            $alert = 1;
+            $alert = 2;
             $t_start = date(DATE_RFC822);
             $query = "INSERT INTO ALERT_LOG(CAT,T_START) 
                     VALUES(:cat,:t_start)";
@@ -37,14 +37,7 @@ if(isset($_POST['view'])){
             oci_execute($stid);
             $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
             $isact = $result['IS_ACT'];
-
-
-            // $isact = 'N';
-
-            // $data = array(
-            //     'act' => $isact
-            // );
-
+            // $cat = $result['CAT'];
 
             // echo json_encode($data);
             oci_free_statement($stid);
@@ -58,7 +51,7 @@ if(isset($_POST['view'])){
 
         // $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
         
-
+        
         $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
 
         $stid = oci_parse($conn, $query);
@@ -66,10 +59,9 @@ if(isset($_POST['view'])){
         $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
         $output = '';
         $isact = $result['IS_ACT'];
-        
+        $cat = strval($result['CAT']);
 
             if ($result > 0){
-
                 switch($result['CAT']){
                     case 0 :
                         $output .= '
@@ -123,13 +115,16 @@ if(isset($_POST['view'])){
                 
                 }
                 
+            }else{
+                $cat = 4;
             }
 
         
 
         $data = array(
             'alert' => $output,
-            'act' => $isact
+            'act' => $isact,
+            'cat' => $cat
         );
         echo json_encode($data);
         oci_free_statement($stid);
