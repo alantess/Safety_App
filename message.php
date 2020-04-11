@@ -95,17 +95,11 @@ let name = capitalizeFirstLetter('<?php echo $_SESSION['username'] ?>')
 		// prevent form from submitting
 
 	
-	
-
-	
 		return false;
 
 	}
 
 	
-
-
-
 	// listen for incoming messages
 	firebase.database().ref("messages").on("child_added", function (snapshot) {
 
@@ -141,7 +135,8 @@ let name = capitalizeFirstLetter('<?php echo $_SESSION['username'] ?>')
 // attach listener for delete message
 firebase.database().ref("messages").on("child_removed", function (snapshot) {
 	// remove message node
-	document.getElementById("message-" + snapshot.key).innerHTML = "<i>This message has been removed</i>";
+  document.getElementById("message-" + snapshot.key).innerHTML = "<i>This message has been removed</i>";
+  
 });
 
 
