@@ -39,8 +39,83 @@
 
         <!--Emergency Button-->
         <button type="button" href="#" class="btn btn-danger" id="emergency">Emergency</button>
+        <div class="modal" id="EmergencyModal">
 
-    </div>
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Select Emergency</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Active Shooter -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="shooterRadio" id="shooterRadio" value="option1">
+                            <label class="form-check-label" for="shooterRadio">
+                                Active Shooter
+                            </label>
+                        </div>
+                        <!-- Fire -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="fireRadio" id="fireRadio" value="option2">
+                            <label class="form-check-label" for="fireRadio">
+                                Fire
+                            </label>
+                        </div>
+                        <!-- Nat. Disaster -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="natDisasterRadio" id="natDisasterRadio" value="option3">
+                            <label class="form-check-label" for="natDisasterRadio">
+                                Natural Disaster
+                            </label>
+                        </div>
+                        <!-- Medical -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medicalRadio" id="medicalRadio" value="option4">
+                            <label class="form-check-label" for="medicalRadio">
+                                Medical Emergency
+                            </label>
+                        </div>
+                        <!-- Fight -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="fightRadio" id="fightRadio" value="option5">
+                            <label class="form-check-label" for="fightRadio">
+                                Fight!
+                            </label>
+                        </div>
+                        <!-- Other -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="otherRadio" id="otherRadio" value="option6">
+                            <label class="form-check-label" for="fightRadio">
+                                Other
+                            </label>
+                        </div>
+                        <!-- Other inputbox-->
+                        <div class="form-group">
+                            <label for="otherTextArea">Enter Emergency</label>
+                            <textarea class="form-control rounded-0" id="otherTextArea" rows="3"></textarea>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                    <!-- Dismiss button -->
+                    <button type="submit" class="btn btn-primary mr-auto" id='dismissModal'>Dismiss Emergency</button>
+
+                    <!-- submit button -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+
+            </div>
 
 </nav>
 <!--- End Navigation -->
