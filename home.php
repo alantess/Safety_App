@@ -12,11 +12,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-
 if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
     echo '<script src = "admin.js"></script>';
 }
-
 
 ?>
 
@@ -24,46 +22,12 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
 <html>
 
 <head>
-    <title>School Safe TEST</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- bootstrap and AJAX for notification bell -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-
-    <!-- bootstrap code -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-
-    <!-- Jquery Modal-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
-
-    <!--Google Script-->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!--Add an API key-->
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Mobiscroll JS and CSS Includes -->
-    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
-    <script src="js/mobiscroll.javascript.min.js"></script>
-
-
-    <script src="fetch.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <?php include 'includes/head.php'; ?>
 </head>
 
 <body>
+
     <?php if (isset($_SESSION['loggedin'])) : ?>
         <div class="error success">
             <h3>
@@ -74,111 +38,10 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
             </h3>
         </div>
     <?php endif ?>
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <!-- Notification Bell Icon for Alerts -->
-            <a href="#" class="navbar-brand" id="alert"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span></a>
-
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#EmergencyModal" id="emergency">Emergency</button>
-
-
-            <div class="modal" id="EmergencyModal">
-
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Select Emergency</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form>
-                            <!-- Active Shooter -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="shooterRadio" id="shooterRadio" value="option1">
-                                <label class="form-check-label" for="shooterRadio">
-                                    Active Shooter
-                                </label>
-                            </div>
-                            <!-- Fire -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="fireRadio" id="fireRadio" value="option2">
-                                <label class="form-check-label" for="fireRadio">
-                                    Fire
-                                </label>
-                            </div>
-                            <!-- Nat. Disaster -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="natDisasterRadio" id="natDisasterRadio" value="option3">
-                                <label class="form-check-label" for="natDisasterRadio">
-                                    Natural Disaster
-                                </label>
-                            </div>
-                            <!-- Medical -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="medicalRadio" id="medicalRadio" value="option4">
-                                <label class="form-check-label" for="medicalRadio">
-                                    Medical Emergency
-                                </label>
-                            </div>
-                            <!-- Fight -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="fightRadio" id="fightRadio" value="option5">
-                                <label class="form-check-label" for="fightRadio">
-                                    Fight!
-                                </label>
-                            </div>
-                            <!-- Other -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="otherRadio" id="otherRadio" value="option6">
-                                <label class="form-check-label" for="fightRadio">
-                                    Other
-                                </label>
-                            </div>
-                            <!-- Other inputbox-->
-                            <div class="form-group">
-                                <label for="otherTextArea">Enter Emergency</label>
-                                <textarea class="form-control rounded-0" id="otherTextArea" rows="3"></textarea>
-                            </div>
-
-
-                        </form>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
-                        <!-- Dismiss button -->
-                        <button type="submit" class="btn btn-primary mr-auto" id='dismissModal'>Dismiss Emergency</button>
-
-                        <!-- submit button -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#" id="attendanceT">Attendance</a>
-                    <a class="nav-item nav-link" href="message.php" id="messagesT">Messages</a>
-                    <a class="nav-item nav-link" href="#">Classes</a>
-                    <a class="nav-item nav-link" href="#">Settings</a>
-                    <a class="nav-item nav-link" href="#">Help</a>
-                    <a class="nav-item nav-link" href="logout.php?logout='1'" id=" logout">Logout</a>
-                </div>
-            </div>
-        </nav>
+        <?php include 'includes/navbar.php'; ?>
     </header>
 
     <div id="content" data-target="#navbarNavAltMarkup">
@@ -186,7 +49,8 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
 
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
 
-        <button href="getInfo.php" id="dismiss">Dismiss</button>
+        <button id="dismiss">Dismiss</button>
+
 
         <!-- Google Calendar -->
         <div mbsc-page class="demo-google-calendar">
@@ -216,12 +80,7 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
 
 
     <footer>
-        <nav class="navbar navbar-dark bg-dark fixed-bottom">
-            <a class="navbar-brand" href="#">Home</a>
-            <a class="navbar-brand" href="#">Cal.</a>
-            <a class="navbar-brand" href="#" id="attendanceB">Att.</a>
-            <a class="navbar-brand" href="#" id="messagesB">Messages</a>
-        </nav>
+        <?php include 'includes/foot.php'; ?>
     </footer>
 </body>
 
