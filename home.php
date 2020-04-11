@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-if (!isset($_SESSION['username']) && $_SESSION['username'] == 1) {
+if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
     echo '<script src = "admin.js"></script>';
 }
 
@@ -22,6 +22,7 @@ if (!isset($_SESSION['username']) && $_SESSION['username'] == 1) {
 <html>
 
 <head>
+
     <?php include 'includes/head.php'; ?>
 </head>
 
@@ -39,6 +40,7 @@ if (!isset($_SESSION['username']) && $_SESSION['username'] == 1) {
     <?php endif ?>
 
     <header>
+
         <?php include 'includes/navbar.php'; ?>
     </header>
 
@@ -48,6 +50,7 @@ if (!isset($_SESSION['username']) && $_SESSION['username'] == 1) {
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
 
         <button id="dismiss">Dismiss</button>
+
 
         <!-- Google Calendar -->
         <div mbsc-page class="demo-google-calendar">

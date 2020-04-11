@@ -2,8 +2,6 @@
 include('db_connect.php');
 session_start();
 
-
-
 if(isset($_POST['view'])){
 
     if ($_POST['view']=='YES') {
