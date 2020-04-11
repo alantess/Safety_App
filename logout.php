@@ -9,5 +9,4 @@
     // relocate to login
     header('location: index.php');
     exit;
-
 ?>
