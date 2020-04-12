@@ -38,9 +38,15 @@
         </a>
 
         <!--Emergency Button-->
+<<<<<<< HEAD
         <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
 
         <div class="modal fade" id="EmergencyModal">
+=======
+        <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
+
+        <div class="modal" id="EmergencyModal">
+>>>>>>> c30be855b95c4355fd7be3b7e8100e3b0255bfa3
 
             <div class="modal-content">
 
