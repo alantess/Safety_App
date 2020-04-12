@@ -29,5 +29,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script src="fetch.js"></script>
-<script src="./js/session.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css">

@@ -3,8 +3,6 @@ $(document).ready(function () {
     // updating the view with notifications using ajax
     function load_unseen_notification(view = '',options) {
 
-        var level;
-
         $ .ajax({
             url: "emergency.php",
             type: "POST",
@@ -40,7 +38,8 @@ $(document).ready(function () {
    
     load_unseen_notification();
 
-    $('#submitModal').click(function(){
+
+    $('#submitModal2').click(function(){
 
         var radioValue = $('form input:checked').val();
         if(radioValue == 'option1'){
@@ -76,13 +75,6 @@ $(document).ready(function () {
         },'json');
     });
 
-    // $('#submitModal').click(function(){
-    //     if($("input[name= shooterRadio]:checked").val() == 'option1'){
-    //         $.post('emergency.php',function(data){
-
-    //         }
-    //     }
-    // });
 
     $('#dismissModal').click(function () {
         console.log('dismiss');
@@ -90,15 +82,11 @@ $(document).ready(function () {
         load_unseen_notification('NO');
     });
 
-
-
     // var shooter = 8200;
     // var fire = 9700;
     // var tornado = 9000;
     // var timedelay = 5000;
     
- 
-
     setInterval(function () {
         load_unseen_notification();;
         console.log('setInterval again');
