@@ -30,19 +30,13 @@
                 </li>
             </ul>
         </div>
-
-<<<<<<< HEAD
-        <!-- Notification Bell
-=======
         <!--Notification Bell-->
->>>>>>> 8e9fccf... formatting
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
             <i class="material-icons" style="font-size:36px">notifications</i>
         </a>
 
         <!--Emergency Button-->
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <button type="button" href="#" class="btn btn-danger"  id="emergency">Emergency</button>
@@ -54,11 +48,6 @@
 >>>>>>> a7f2e2d... Added icon for notifications
 
         <div class="modal fade" id="EmergencyModal">
-=======
-        <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
-
-        <div class="modal" id="EmergencyModal">
->>>>>>> c30be85... Added icon for notifications
 
             <div class="modal-content">
 
@@ -137,7 +126,6 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 <<<<<<< HEAD
             <div class="modal fade" id="modalVarification">
@@ -148,9 +136,6 @@
 >>>>>>> 8e9fccf... formatting
             <div class="modal" id="modalVarification">
 >>>>>>> a7f2e2d... Added icon for notifications
-=======
-            <div class="modal" id="modalVarification">
->>>>>>> c30be85... Added icon for notifications
                 <div class="modal-dialog">
                     <div class="modal-content">
 
