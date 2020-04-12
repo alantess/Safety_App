@@ -45,7 +45,7 @@
         </a>
 
 
-        <!--Emergency Button-->cyMod
+        <!--Emergency Button-->
         <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
 
         <div class="modal" id="EmergencyModal">
@@ -63,42 +63,42 @@
                     <form>
                         <!-- Active Shooter -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="shooterRadio" id="shooterRadio" value="option1">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="shooterRadio" value="option1">
                             <label class="form-check-label" for="shooterRadio">
                                 Active Shooter
                             </label>
                         </div>
                         <!-- Fire -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="fireRadio" id="fireRadio" value="option2">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="fireRadio" value="option2">
                             <label class="form-check-label" for="fireRadio">
                                 Fire
                             </label>
                         </div>
                         <!-- Nat. Disaster -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="natDisasterRadio" id="natDisasterRadio" value="option3">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="natDisasterRadio" value="option3">
                             <label class="form-check-label" for="natDisasterRadio">
                                 Natural Disaster
                             </label>
                         </div>
                         <!-- Medical -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="medicalRadio" id="medicalRadio" value="option4">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="medicalRadio" value="option4">
                             <label class="form-check-label" for="medicalRadio">
                                 Medical Emergency
                             </label>
                         </div>
                         <!-- Fight -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="fightRadio" id="fightRadio" value="option5">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="fightRadio" value="option5">
                             <label class="form-check-label" for="fightRadio">
                                 Fight!
                             </label>
                         </div>
                         <!-- Other -->
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="otherRadio" id="otherRadio" value="option6">
+                            <input class="form-check-input" type="radio" name="RadioButton" id="otherRadio" value="option6">
                             <label class="form-check-label" for="fightRadio">
                                 Other
                             </label>
@@ -117,10 +117,10 @@
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
                     <!-- Dismiss button -->
-                    <button type="submit" class="btn btn-primary mr-auto" id='dismissModal'>Dismiss Emergency</button>
+                    <button type="submit" class="btn btn-primary mr-auto" id='dismissModal' data-dismiss="modal">Dismiss Emergency</button>
 
                     <!-- submit button -->
-                    <button type="submit" id="submitModal" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="submitModal" data-dismiss="modal" class="btn btn-primary">Submit</button>
 
                 </div>
 

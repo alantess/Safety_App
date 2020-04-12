@@ -48,7 +48,7 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == '1') {
 
         <h1>Welcome <?php echo $_SESSION['username'] ?></h1>
 
-        <button id="dismiss">Dismiss</button>
+        <!-- <button id="dismiss">Dismiss</button> -->
 
 
         <!-- Google Calendar -->

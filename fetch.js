@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
     // updating the view with notifications using ajax
-    function load_unseen_notification(view = '') {
+    function load_unseen_notification(view = '',options) {
 
         var level;
 
         $ .ajax({
             url: "emergency.php",
             type: "POST",
-            data:{view:view},
+            data:{view:view,options:options},
             dataType: "json",
             success: function (data) {
                 
@@ -39,17 +39,26 @@ $(document).ready(function () {
 
    
     load_unseen_notification();
-    // submit form and get new records
-    
-    // load new notifications
-    // $('#emergency').on('click', function () {
-        
-    //     // $('.count').html('');
-    //     load_unseen_notification('YES');
-    // });
 
     $('#submitModal').click(function(){
-        load_unseen_notification('YES');
+
+        var radioValue = $('form input:checked').val();
+        if(radioValue == 'option1'){
+            load_unseen_notification('YES','1');
+        }else if(radioValue == 'option2'){
+            load_unseen_notification('YES', '2');
+        }else if(radioValue == 'option3'){
+            load_unseen_notification('YES', '3');
+        }else if(radioValue == 'option4'){
+            load_unseen_notification('YES', '4');
+        }else if(radioValue == 'option5'){
+            load_unseen_notification('YES', '5');
+        }else if(radioValue == 'option6'){
+            
+        }
+
+
+        // load_unseen_notification('YES');
     });
 
     $('#emergency').click(function(){
@@ -66,6 +75,14 @@ $(document).ready(function () {
 
         },'json');
     });
+
+    // $('#submitModal').click(function(){
+    //     if($("input[name= shooterRadio]:checked").val() == 'option1'){
+    //         $.post('emergency.php',function(data){
+
+    //         }
+    //     }
+    // });
 
     $('#dismissModal').click(function () {
         console.log('dismiss');

@@ -6,7 +6,7 @@ if(isset($_POST['view'])){
 
     if ($_POST['view']=='YES') {
         
-            $alert = 2;
+            $alert = (int)$_POST['options'];
             $t_start = date(DATE_RFC822);
             $query = "INSERT INTO ALERT_LOG(CAT,T_START) 
                     VALUES(:cat,:t_start)";
