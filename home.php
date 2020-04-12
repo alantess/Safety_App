@@ -59,7 +59,28 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == '1') {
                         <div class="mbsc-col-sm-12 mbsc-col-md-4">
                             <div class="mbsc-form-group">
                                 <button mbsc-button id="demo-google-auth" class="mbsc-btn-block">Connect Google Calendars</button>
-                                <div id="demo-google-cal-list"></div>
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" id="calendarSettings" class="mbsc-btn-block" style="display:none">Settings</button>
+                                <!-- Calendar Seetings Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="modal-title" id="exampleModalLabel">Calendar Settings</h2>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div id="demo-google-cal-list"></div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="mbsc-col-sm-12 mbsc-col-md-8">
