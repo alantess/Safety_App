@@ -39,6 +39,7 @@
         <!--Emergency Button-->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <button type="button" href="#" class="btn btn-danger"  id="emergency">Emergency</button>
 =======
 <<<<<<< HEAD
@@ -46,8 +47,11 @@
 >>>>>>> 8e9fccf... formatting
         <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
 >>>>>>> a7f2e2d... Added icon for notifications
+=======
+        <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
+>>>>>>> a9f67a0e43ce20cb400cca3ed9d398f6476c7383
 
-        <div class="modal fade" id="EmergencyModal">
+        <div class="modal" id="EmergencyModal">
 
             <div class="modal-content">
 
@@ -126,6 +130,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
             <div class="modal fade" id="modalVarification">
@@ -141,6 +146,10 @@
 =======
                 <div class="modal-dialog modal-dialog-centered" role="document">
 >>>>>>> a9f67a0... spelling error
+=======
+            <div class="modal" id="modalVarification">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+>>>>>>> a9f67a0e43ce20cb400cca3ed9d398f6476c7383
                     <div class="modal-content">
 
                         <!-- Modal Header -->
