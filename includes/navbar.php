@@ -135,13 +135,17 @@
 =======
 >>>>>>> 8e9fccf... formatting
             <div class="modal" id="modalVarification">
+<<<<<<< HEAD
 >>>>>>> a7f2e2d... Added icon for notifications
                 <div class="modal-dialog">
+=======
+                <div class="modal-dialog modal-dialog-centered" role="document">
+>>>>>>> a9f67a0... spelling error
                     <div class="modal-content">
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-tital">Verify Submition</h4>
+                            <h4 class="modal-title">Verify Submition</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
