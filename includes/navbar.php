@@ -30,6 +30,7 @@
                 </li>
             </ul>
         </div>
+        
         <!--Notification Bell-->
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
@@ -37,30 +38,14 @@
         </a>
 
         <!--Emergency Button-->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <button type="button" href="#" class="btn btn-danger"  id="emergency">Emergency</button>
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 8e9fccf... formatting
-        <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
->>>>>>> a7f2e2d... Added icon for notifications
-=======
         <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
->>>>>>> a9f67a0e43ce20cb400cca3ed9d398f6476c7383
-
         <div class="modal" id="EmergencyModal">
-
             <div class="modal-content">
-
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h4 class="modal-title">Select Emergency</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form>
@@ -111,11 +96,8 @@
                             <label for="otherTextArea">Enter Emergency</label>
                             <textarea class="form-control rounded-0" id="otherTextArea" rows="3"></textarea>
                         </div>
-
-
                     </form>
                 </div>
-
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
@@ -124,32 +106,15 @@
 
                     <!-- submit button -->
                     <button type="button" class="btn btn-primary" id="submitModal1">Submit</button>
-
                 </div>
             </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
             <div class="modal fade" id="modalVarification">
-=======
-=======
->>>>>>> c30be85... Added icon for notifications
-=======
->>>>>>> 8e9fccf... formatting
             <div class="modal" id="modalVarification">
-<<<<<<< HEAD
->>>>>>> a7f2e2d... Added icon for notifications
                 <div class="modal-dialog">
-=======
                 <div class="modal-dialog modal-dialog-centered" role="document">
->>>>>>> a9f67a0... spelling error
-=======
             <div class="modal" id="modalVarification">
                 <div class="modal-dialog modal-dialog-centered" role="document">
->>>>>>> a9f67a0e43ce20cb400cca3ed9d398f6476c7383
                     <div class="modal-content">
 
                         <!-- Modal Header -->
