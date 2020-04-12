@@ -31,14 +31,23 @@
             </ul>
         </div>
 
-        <!--Notification Bell-->
+        <!-- Notification Bell
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
             <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span>
+        </a> -->
+
+
+        <!--Notification Bell-->
+        <a href="#" class="navbar-brand" id="alert">
+            <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
+            <i class="material-icons" style="font-size:36px">notifications</i>
         </a>
 
-        <!--Emergency Button-->
-        <button type="button" href="#" class="btn btn-danger" id="emergency">Emergency</button>
+
+        <!--Emergency Button-->cyMod
+        <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
+
         <div class="modal" id="EmergencyModal">
 
             <div class="modal-content">
@@ -111,7 +120,7 @@
                     <button type="submit" class="btn btn-primary mr-auto" id='dismissModal'>Dismiss Emergency</button>
 
                     <!-- submit button -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="submitModal" class="btn btn-primary">Submit</button>
 
                 </div>
 

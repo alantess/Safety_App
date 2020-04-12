@@ -7,12 +7,12 @@ session_start();
 // }
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== 'true') {
     header("location: index.php");
     exit;
 }
 
-if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
+if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == '1') {
     echo '<script src = "admin.js"></script>';
 }
 
@@ -22,7 +22,6 @@ if (!isset($_SESSION['userlevel']) && $_SESSION['userlevel'] == 1) {
 <html>
 
 <head>
-
     <?php include 'includes/head.php'; ?>
 </head>
 

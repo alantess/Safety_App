@@ -106,7 +106,7 @@ if(!$error){
 
     print "created new user";
     $_SESSION['username'] = $username;
-    $_SESSION['loggedin'] = true;
+    $_SESSION['loggedin'] = 'true';
 
     // free the query and close the oracle connection
     oci_free_statement($stid);

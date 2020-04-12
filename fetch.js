@@ -12,7 +12,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 
-
                 if(data.act == 'Y'){
                     console.log('ajax call was success');
                     $('#banner').html(data.alert);
@@ -49,7 +48,26 @@ $(document).ready(function () {
     //     load_unseen_notification('YES');
     // });
 
-    $('#dismiss').click(function () {
+    $('#submitModal').click(function(){
+        load_unseen_notification('YES');
+    });
+
+    $('#emergency').click(function(){
+
+        $.get("includes/getSessionInfo.php", function (data, status) {
+            console.log(data.name);
+            console.log(data.level);
+            if(data.level == '1'){
+                $('#dismissModal').show();
+            }else{
+                $('#dismissModal').hide();
+            }
+
+
+        },'json');
+    });
+
+    $('#dismissModal').click(function () {
         console.log('dismiss');
         // $('.count').html('');
         load_unseen_notification('NO');
