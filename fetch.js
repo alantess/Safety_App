@@ -60,6 +60,12 @@ $(document).ready(function () {
         // load_unseen_notification('YES');
     });
 
+
+    // $('#submitModal1').click(function(){
+    //     $('#EmergencyModal').modal('hide');
+    //     $('#modalVarification').modal('show');
+    // });
+
     $('#emergency').click(function(){
 
         $.get("includes/getSessionInfo.php", function (data, status) {
