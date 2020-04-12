@@ -60,12 +60,15 @@ $(document).ready(function () {
         // load_unseen_notification('YES');
     });
 
+<<<<<<< HEAD
 
     // $('#submitModal1').click(function(){
     //     $('#EmergencyModal').modal('hide');
     //     $('#modalVarification').modal('show');
     // });
 
+=======
+>>>>>>> c30be85... Added icon for notifications
     $('#emergency').click(function(){
 
         $.get("includes/getSessionInfo.php", function (data, status) {
