@@ -34,11 +34,12 @@
         <!--Notification Bell-->
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
-            <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span>
+            <i class="material-icons" style="font-size:36px">notifications</i>
         </a>
 
         <!--Emergency Button-->
-        <button type="button" href="#" class="btn btn-danger" id="emergency">Emergency</button>
+        <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
+
         <div class="modal" id="EmergencyModal">
 
             <div class="modal-content">
@@ -114,8 +115,43 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </div>
-
             </div>
 
+            <div class="modal" id="modalVarification">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-tital">Verify Submition</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Verification Submit -->
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        Are you sure you want to submit an Emergency for
+                                    </label>
+                                </div>
+                            </form>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <!-- Cancel Button -->
+                                <button type="button" class="btn btn-primary mr-auto" id="cancelModal" data-dismiss="modal">Cancel</button>
+
+                                <!-- submit button -->
+                                <button type="button" id="submitModal2" data-dismiss="modal" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </nav>
 <!--- End Navigation -->
