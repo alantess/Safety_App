@@ -46,7 +46,7 @@
 
 
         <!--Emergency Button-->
-        <button type="button" href="#" class="btn btn-danger"  id="emergency">Emergency</button>
+        <button type="button" href="#" class="btn btn-danger" data-toggle="modal" data-target="#EmergencyModal" id="emergency">Emergency</button>
 
         <div class="modal fade" id="EmergencyModal">
 
@@ -120,7 +120,7 @@
                     <button type="button" class="btn btn-primary mr-auto" id='dismissModal' data-dismiss="modal">Dismiss Emergency</button>
 
                     <!-- submit button -->
-                    <button type="button" class="btn btn-primary" id="submitModal1">Submit</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="EmergencyModal" data-toggle="modal" data-target="#modalVarification" id="submitModal1">Submit</button>
 
                 </div>
             </div>

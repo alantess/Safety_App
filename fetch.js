@@ -53,21 +53,16 @@ $(document).ready(function () {
         }else if(radioValue == 'option5'){
             load_unseen_notification('YES', '5');
         }else if(radioValue == 'option6'){
-            
+            // need to write conditions for displaying other
         }
-
 
         // load_unseen_notification('YES');
     });
 
 
-    // $('#submitModal1').click(function(){
-    //     $('#EmergencyModal').modal('hide');
-    //     $('#modalVarification').modal('show');
-    // });
 
     $('#emergency').click(function(){
-
+       
         $.get("includes/getSessionInfo.php", function (data, status) {
             console.log(data.name);
             console.log(data.level);
@@ -76,7 +71,6 @@ $(document).ready(function () {
             }else{
                 $('#dismissModal').hide();
             }
-
 
         },'json');
     });
