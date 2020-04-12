@@ -34,6 +34,7 @@
         <!-- Notification Bell
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
+<<<<<<< HEAD
             <span class="glyphicon glyphicon-bell" style="font-size:24px;"></span>
         </a> -->
 
@@ -41,14 +42,22 @@
         <!--Notification Bell-->
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
+=======
+>>>>>>> c30be85... Added icon for notifications
             <i class="material-icons" style="font-size:36px">notifications</i>
         </a>
 
 
         <!--Emergency Button-->
+<<<<<<< HEAD
         <button type="button" href="#" class="btn btn-danger" data-toggle='modal' data-target="#EmergencyModal" id="emergency">Emergency</button>
 
         <div class="modal fade" id="EmergencyModal">
+=======
+        <button type="button" href="#" class="btn btn-danger" data-target="#EmergencyModal" data-toggle="modal" id="emergency">Emergency</button>
+
+        <div class="modal" id="EmergencyModal">
+>>>>>>> c30be85... Added icon for notifications
 
             <div class="modal-content">
 
@@ -125,13 +134,17 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c30be85... Added icon for notifications
             <div class="modal" id="modalVarification">
                 <div class="modal-dialog">
                     <div class="modal-content">
 
                         <!-- Modal Header -->
                         <div class="modal-header">
+<<<<<<< HEAD
                             <h4 class="modal-title">Verify Submition</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
@@ -153,15 +166,45 @@
                             <div class="modal-footer">
                                 <!-- Cancel button -->
                                 <button type="button" class="btn btn-primary mr-auto" id='cancelModal' data-dismiss="modal">Cancel</button>
+=======
+                            <h4 class="modal-tital">Verify Submition</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Verification Submit -->
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        Are you sure you want to submit an Emergency for
+                                    </label>
+                                </div>
+                            </form>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <!-- Cancel Button -->
+                                <button type="button" class="btn btn-primary mr-auto" id="cancelModal" data-dismiss="modal">Cancel</button>
+>>>>>>> c30be85... Added icon for notifications
 
                                 <!-- submit button -->
                                 <button type="button" id="submitModal2" data-dismiss="modal" class="btn btn-primary">Submit</button>
 
                             </div>
+<<<<<<< HEAD
 
                         </div>
                     </div>
                 </div>
 
+=======
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> c30be85... Added icon for notifications
 </nav>
 <!--- End Navigation -->
