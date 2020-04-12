@@ -21,8 +21,6 @@
 <!--Add an API key-->
 <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
-
-
 <!-- Mobiscroll JS and CSS Includes -->
 <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
 <script src="js/mobiscroll.javascript.min.js"></script>
