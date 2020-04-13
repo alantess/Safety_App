@@ -21,7 +21,7 @@ functionality of the rest. -->
     </header>
 
     <div class="col-md-8 mt-5 pt-5 mx-auto w-75">
-    <?php include "includes/banner.php"; ?>
+        <?php include "includes/banner.php"; ?>
         <form id="EmerForm" action="emer.php">
             <!-- Active Shooter -->
             <div class="form-check">
@@ -59,14 +59,14 @@ functionality of the rest. -->
                 </label>
             </div>
             <!-- Other -->
-<!--             <div class="form-check">
+            <!--             <div class="form-check">
                 <input class="form-check-input" type="radio" name="RadioButton" id="otherRadio" value="option5">
                 <label class="form-check-label" for="otherRadio">
                     Other
                 </label>
             </div> -->
             <!-- Other inputbox-->
-<!--             <div class="form-group">
+            <!--             <div class="form-group">
                 <label for="otherTextArea">Enter Emergency</label>
                 <textarea class="form-control rounded-0" id="otherTextArea" rows="3"></textarea>
             </div> -->
@@ -79,11 +79,11 @@ functionality of the rest. -->
             <!-- Cancel button  clears form -->
             <button type="reset" class="btn btn-primary" form="EmerForm" style="width: 70px" id="cancel">Cancel</button>
             <!-- submit button  launches confirmation modal -->
-            <button type="reset" class="btn btn-primary" style="width: 70px"  id="submitModal2">Submit</button>
+            <button type="reset" class="btn btn-primary" style="width: 70px" id="submitModal2">Submit</button>
         </div>
-        <div id='dismissModal' class="col-6 col-md-4 mt-1 mx-auto">
+        <div id='dismissButton' class="col-6 col-md-4 mt-1 mx-auto">
             <!-- Dismiss button   dismisses curerent emergency alert (ADMIN ONLY) -->
-            <button type="reset" class="btn btn-primary mt-5 mx-auto"  >Dismiss Emergency</button>
+            <button type="reset" class="btn btn-primary mt-5 mx-auto">Dismiss Emergency</button>
         </div>
     </div>
 
@@ -97,3 +97,16 @@ functionality of the rest. -->
 </body>
 
 </html>
+
+
+<script>
+    $.get("includes/getSessionInfo.php", function(data,status) {
+        
+        if (data.level == '1') {
+            $('#dismissButton').show();
+        } else {
+            $('#dismissButton').hide();
+        }
+
+    }, 'json');
+</script>
