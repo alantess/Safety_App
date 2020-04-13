@@ -134,6 +134,7 @@
                             '</label>';
                     }
                     document.getElementById('demo-google-cal-list').innerHTML = html;
+                    document.getElementById('calendarSettings').style.display ='block';
                     formInst.refresh();
                 }).catch(function (err) {
                     // TODO test for more errors
