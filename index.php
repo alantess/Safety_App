@@ -70,7 +70,7 @@ if (isset($_SESSION['user']) != "") {
                         <button type="submit" class="signup btn btn-primary btn-block">Sign Up</button>
                     </div>
                 </form>
-                
+
                 <a href="#login-form" class="float-right btn btn-outline-primary id" rel="modal:open"> Sign up </a>
 
                 <h4 class="card-title mb-4 mt-1"> Sign in </h4>
@@ -90,10 +90,7 @@ if (isset($_SESSION['user']) != "") {
                     </div>
                 </form>
             </article>
-        </div>'
         </div>
 
 </body>
-
-
 </html>

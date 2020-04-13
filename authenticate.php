@@ -43,6 +43,8 @@ if (!$error) {
     if($row['PASSWORD'] === $password){
         $_SESSION['username'] = $row['USERNAME'];
         $_SESSION['userlevel'] = $row['USER_LVL'];
+        $_SESSION['firstname'] = $row['FNAME'];
+        $_SESSION['lastname'] = $row['LNAME'];
         $_SESSION['loggedin'] = 'true';
         header("location:home.php");
     }else{
