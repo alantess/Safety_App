@@ -1,14 +1,3 @@
-<?php
-session_start();
-?>
-
-<?php
-if (!isset($_SESSION['username'])) {
-    header("location: index.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html>
 
