@@ -45,6 +45,7 @@ if (!$error) {
         $_SESSION['userlevel'] = $row['USER_LVL'];
         $_SESSION['firstname'] = $row['FNAME'];
         $_SESSION['lastname'] = $row['LNAME'];
+        $_SESSION['userid'] = $row['USER_ID'];
         $_SESSION['loggedin'] = 'true';
         header("location:home.php");
     }else{

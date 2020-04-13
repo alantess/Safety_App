@@ -97,22 +97,15 @@ $(document).ready(function () {
     //this is for the dismiss button not for a modal
 
     $('#emergency').click(function () {
-
         $.get("includes/getSessionInfo.php", function (data) {
             console.log(data.name);
             console.log(data.level);
             if (data.level == '1') {
-
-
-                $('#dismissModal').show(); //not working
-                
+                $('#dismissModal').show(); //not working    
             } else {
-         
                 $('#dismissModal').hide(); //not working
-                
             }
         }, 'json');
-
     });
 
 
