@@ -1,19 +1,22 @@
 $(document).ready(function () {
 
     // updating the view with notifications using ajax
-    function load_unseen_notification(view = '',options,comment = '') {
+    function load_unseen_notification(view = '',options) {
 
         $ .ajax({
             url: "emergency.php",
             type: "POST",
-            data:{view:view,options:options,comment:comment},
+            data:{view:view,options:options},
             dataType: "json",
             success: function (data) {
                 
+                console.log(data.cat);
+                console.log(data.act);
+                console.log(data.alert);
+
                 if(data.act == 'Y'){
                     console.log('ajax call was success');
                     
-                    console.log(data.act);
                     if(data.cat == '0' || data.cat == '1' || data.cat == '2'){
                         $('#banner').html(data.alert);
                         console.log(data.alert);
@@ -49,33 +52,31 @@ $(document).ready(function () {
 
     // });
 
-    
-    
-
 
     $('#submitModal1').click(function(){
 
-        var radioValue = $('form input:checked').val();
-        if(radioValue == 'option1'){
+        var radioValue = $('#EmergencyModal input:checked').val();
+        console.log(radioValue);
+        if(radioValue == 'option0'){
+            load_unseen_notification('YES','0');
+        }else if(radioValue == 'option1'){
             load_unseen_notification('YES','1');
         }else if(radioValue == 'option2'){
-            load_unseen_notification('YES', '2');
+            load_unseen_notification('YES','2');
         }else if(radioValue == 'option3'){
-            load_unseen_notification('YES', '3');
+            load_unseen_notification('YES','3');
         }else if(radioValue == 'option4'){
-            load_unseen_notification('YES', '4');
+            load_unseen_notification('YES','4');
         }else if(radioValue == 'option5'){
-            load_unseen_notification('YES', '5');
-        }else if(radioValue == 'option6'){
-            // need to write conditions for displaying other
+            //other option
+            
             var comment = $.trim($('#otherTextArea').val());
             console.log(comment);
-            if(comment != ''){
-                load_unseen_notification('YES','6',comment);
-            }else{
+            if (comment != '') {
+                // load_unseen_notification('YES','6',comment);
+            } else {
                 alert('Need to fill out Text Area');
             }
-
         }
 
         // load_unseen_notification('YES');
@@ -85,7 +86,7 @@ $(document).ready(function () {
 
     $('#emergency').click(function(){
        
-        $.get("includes/getSessionInfo.php", function (data, status) {
+        $.get("includes/getSessionInfo.php", function (data) {
             console.log(data.name);
             console.log(data.level);
             if(data.level == '1'){

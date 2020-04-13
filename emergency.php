@@ -112,14 +112,6 @@ if(isset($_POST['view'])){
                     case 5:
                     break;
                     case 6:
-                        // $output .= '
-                        // <li>
-                        //     <a href="#">
-                        //     <strong>'.$_POST['comment'].'</strong><br />
-                        //     </a>
-                        // </li>
-                        // ';
-
                     break;
                     default:
                 
@@ -134,8 +126,7 @@ if(isset($_POST['view'])){
         $data = array(
             'alert' => $output,
             'act' => $isact,
-            'cat' => $cat,
-            'comment' => $_POST['comment']
+            'cat' => $cat
         );
         echo json_encode($data);
         oci_free_statement($stid);

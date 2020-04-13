@@ -2,8 +2,6 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
     <div class="container-fluid">
 
-
-
         <!--Navigation menu button (while small)-->
         <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
@@ -33,17 +31,14 @@
         <!--Home Button-->
         <a class="navbar-brand" href="home.php">Home</a>
 
-        <div class="dropdown">
+      
 
             <!--Notification Bell-->
-            <a href="#" class="navbar-brand dropdown-toggle" id="alert">
+            <a href="#" class="navbar-brand id="alert">
                 <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
                 <i class="material-icons" style="font-size:36px">notifications</i>
             </a>
 
-            <div class="dropdown-menu">
-            </div>
-        </div>
 
             <!--Emergency Button-->
             <button type="button" href="#" class="btn btn-danger" data-toggle="modal" data-target="#EmergencyModal" id="emergency">Emergency</button>
@@ -63,42 +58,42 @@
                         <form>
                             <!-- Active Shooter -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="shooterRadio" value="option1">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="shooterRadio" value="option0">
                                 <label class="form-check-label" for="shooterRadio">
                                     Active Shooter
                                 </label>
                             </div>
                             <!-- Fire -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="fireRadio" value="option2">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="fireRadio" value="option1">
                                 <label class="form-check-label" for="fireRadio">
                                     Fire
                                 </label>
                             </div>
                             <!-- Nat. Disaster -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="natDisasterRadio" value="option3">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="natDisasterRadio" value="option2">
                                 <label class="form-check-label" for="natDisasterRadio">
                                     Natural Disaster
                                 </label>
                             </div>
                             <!-- Medical -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="medicalRadio" value="option4">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="medicalRadio" value="option3">
                                 <label class="form-check-label" for="medicalRadio">
                                     Medical Emergency
                                 </label>
                             </div>
                             <!-- Fight -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="fightRadio" value="option5">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="fightRadio" value="option4">
                                 <label class="form-check-label" for="fightRadio">
                                     Fight!
                                 </label>
                             </div>
                             <!-- Other -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="RadioButton" id="otherRadio" value="option6">
+                                <input class="form-check-input" type="radio" name="RadioButton" id="otherRadio" value="option5">
                                 <label class="form-check-label" for="fightRadio">
                                     Other
                                 </label>
@@ -120,7 +115,7 @@
                         <button type="button" class="btn btn-primary mr-auto" id='dismissModal' data-dismiss="modal">Dismiss Emergency</button>
 
                         <!-- submit button -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalVarification" id="submitModal1">Submit</button>
+                        <button type="button" class="btn btn-primary" id="submitModal1">Submit</button>
 
                     </div>
                 </div>
