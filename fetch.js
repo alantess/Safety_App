@@ -48,7 +48,7 @@ $(document).ready(function () {
     load_unseen_notification();
 
 
-    $('#submitModal2').click(function () {
+    $('#submitEmergency').click(function () {
 
         var radioValue = $('form input:checked').val();
         if (radioValue == 'option0') {
@@ -64,25 +64,26 @@ $(document).ready(function () {
         } else if (radioValue == 'option5') {
             load_unseen_notification('YES', '5');
         } 
-
-        // load_unseen_notification('YES');
+        // sends the user back to previous page after launch
+        window.history.back();
+        
     });
 
 
 
     //this is for the dismiss button not for a modal
 
-    $('#emergency').click(function () {
-        $.get("includes/getSessionInfo.php", function (data) {
-            console.log(data.name);
-            console.log(data.level);
-            if (data.level == '1') {
-                $('#dismissModal').show(); //not working
-            } else {
-                $('#dismissModal').hide(); //not working
-            }
-        }, 'json');
-    });
+    // $('#emergency').click(function () {
+    //     $.get("includes/getSessionInfo.php", function (data) {
+    //         console.log(data.name);
+    //         console.log(data.level);
+    //         if (data.level == '1') {
+    //             $('#dismissModal').show(); //not working
+    //         } else {
+    //             $('#dismissModal').hide(); //not working
+    //         }
+    //     }, 'json');
+    // });
   
     $('#dismissButton').click(function () {
         console.log('dismiss');
