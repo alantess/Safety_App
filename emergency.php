@@ -47,7 +47,6 @@ if(isset($_POST['view'])){
         
         
         $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
-
         $stid = oci_parse($conn, $query);
         oci_execute($stid);
         $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
@@ -102,12 +101,11 @@ if(isset($_POST['view'])){
                 </div>';
                     break;
                     case 3:
+                        
                     break;
                     case 4:
                     break;
                     case 5:
-                    break;
-                    case 6:
                     break;
                     default:
                 
