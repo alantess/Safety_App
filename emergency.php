@@ -109,12 +109,24 @@ if(isset($_POST['view'])){
                     break;
                     case 4:
                     break;
+                    case 5:
+                    break;
+                    case 6:
+                        // $output .= '
+                        // <li>
+                        //     <a href="#">
+                        //     <strong>'.$_POST['comment'].'</strong><br />
+                        //     </a>
+                        // </li>
+                        // ';
+
+                    break;
                     default:
                 
                 }
                 
             }else{
-                $cat = 4;
+                $cat = 7;
             }
 
         
@@ -122,7 +134,8 @@ if(isset($_POST['view'])){
         $data = array(
             'alert' => $output,
             'act' => $isact,
-            'cat' => $cat
+            'cat' => $cat,
+            'comment' => $_POST['comment']
         );
         echo json_encode($data);
         oci_free_statement($stid);

@@ -1,29 +1,34 @@
 $(document).ready(function () {
 
     // updating the view with notifications using ajax
-    function load_unseen_notification(view = '',options) {
+    function load_unseen_notification(view = '',options,comment = '') {
 
         $ .ajax({
             url: "emergency.php",
             type: "POST",
-            data:{view:view,options:options},
+            data:{view:view,options:options,comment:comment},
             dataType: "json",
             success: function (data) {
                 
                 if(data.act == 'Y'){
                     console.log('ajax call was success');
-                    $('#banner').html(data.alert);
+                    
                     console.log(data.act);
-                    // if (data.cat == '0') {
-                    //     delay = 0;
-                    //     refresh(delay);
-                    // } else if (delay.cat == '1') {
-                    //     delay = 1;
-                    //     refresh(delay);
-                    // } else if (delay.cat == '2') {
-                    //     delay = 2;
-                    //     refresh(delay);
-                    // }
+                    if(data.cat == '0' || data.cat == '1' || data.cat == '2'){
+                        $('#banner').html(data.alert);
+                        console.log(data.alert);
+                    }else if(data.cat == '3'|| data.cat == '4' || data.cat =='5'){
+
+                        console.log(data.alert);
+                    }else if (data.cat == '6'){
+                        console.log(data.comment)
+
+                        // $('.dropdown-menu').append(
+                            
+                        //     '<p class="dropdown-itme">'+data.comment+'</p>'
+                        // );
+                    }
+                   
 
                 }else{
                     $('#banner').empty();
@@ -38,8 +43,17 @@ $(document).ready(function () {
    
     load_unseen_notification();
 
+    // $('#submitModal1').click(function(){
+    //     $('#submitModal1').attr('disabled',true);
+    //     $('#dissmissmodal').attr('disabled',true);
 
-    $('#submitModal2').click(function(){
+    // });
+
+    
+    
+
+
+    $('#submitModal1').click(function(){
 
         var radioValue = $('form input:checked').val();
         if(radioValue == 'option1'){
@@ -54,6 +68,14 @@ $(document).ready(function () {
             load_unseen_notification('YES', '5');
         }else if(radioValue == 'option6'){
             // need to write conditions for displaying other
+            var comment = $.trim($('#otherTextArea').val());
+            console.log(comment);
+            if(comment != ''){
+                load_unseen_notification('YES','6',comment);
+            }else{
+                alert('Need to fill out Text Area');
+            }
+
         }
 
         // load_unseen_notification('YES');
