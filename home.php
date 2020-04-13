@@ -26,7 +26,7 @@
 
     <div class="col-md-8 mt-5 pt-5 mx-auto w-75" id="content" data-target="#navbarNavAltMarkup">
         <h1>Welcome <?php echo $_SESSION['firstname'] ?> <?php echo $_SESSION['lastname'] ?></h1>
-        <?php include 'includes/banner.php';?>
+        <?php include 'includes/banner.php'; ?>
     </div>
 
     <footer>
