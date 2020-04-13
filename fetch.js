@@ -102,14 +102,9 @@ $(document).ready(function () {
             console.log(data.name);
             console.log(data.level);
             if (data.level == '1') {
-
-
                 $('#dismissModal').show(); //not working
-                
             } else {
-         
                 $('#dismissModal').hide(); //not working
-                
             }
         }, 'json');
 
