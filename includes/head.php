@@ -1,5 +1,3 @@
-
-
 <title>School Safe TEST</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +30,3 @@
 
 <script src="fetch.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css">
-<?php 
-session_start();
-if (!isset($_SESSION['username'])){
-    header("location: index.php");
-    die;
-} ?>
