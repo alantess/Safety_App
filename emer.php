@@ -108,7 +108,7 @@ functionality of the rest. -->
                         <!-- verification submit -->
                         <div class="form-check">
                             <label class="form-check-label">
-                                Are you sure you want to submit Emergency for 
+                                Are you sure you want to submit this emergency.
                             </label>
                         </div>
                     </Form>

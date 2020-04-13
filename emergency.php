@@ -37,14 +37,9 @@ if(isset($_POST['view'])){
 
             // echo json_encode($data);
             oci_free_statement($stid);
-
-
         }
        
     }else{
-
-        // $query = "SELECT * FROM ALERT_LOG WHERE T_END IS NULL";
-        
         
         $query = "SELECT * FROM ALERT_LOG WHERE T_START = (SELECT MAX(T_START) FROM ALERT_LOG)";
         $stid = oci_parse($conn, $query);
@@ -101,7 +96,13 @@ if(isset($_POST['view'])){
                 </div>';
                     break;
                     case 3:
-                        
+                        $output .= '
+                            <li>
+                            <a href="#">
+                                <strong> Medical Emergency</strong><br />
+                            </a>
+                            </li>
+                        ';
                     break;
                     case 4:
                     break;
@@ -114,8 +115,6 @@ if(isset($_POST['view'])){
             }else{
                 $cat = 7;
             }
-
-        
 
         $data = array(
             'alert' => $output,
