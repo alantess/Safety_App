@@ -13,12 +13,26 @@ functionality of the rest. -->
     <?php include 'includes/head.php'; ?>
 </head>
 
+<script>
+    $.get("includes/getSessionInfo.php", function(data) {
+
+        if (data.level == '1') {
+            $('#dismissButton').show();
+        } else {
+            $('#dismissButton').hide();
+        }
+
+    }, 'json');
+</script>
+
 <body style="overflow:hidden">
 
     <header>
         <!-- LEAVE THIS-->
         <?php include 'includes/navbar.php'; ?>
     </header>
+
+
 
     <div class="col-md-8 mt-5 pt-5 mx-auto w-75">
         <?php include "includes/banner.php"; ?>
@@ -58,18 +72,7 @@ functionality of the rest. -->
                     Fight!
                 </label>
             </div>
-            <!-- Other -->
-            <!--             <div class="form-check">
-                <input class="form-check-input" type="radio" name="RadioButton" id="otherRadio" value="option5">
-                <label class="form-check-label" for="otherRadio">
-                    Other
-                </label>
-            </div> -->
-            <!-- Other inputbox-->
-            <!--             <div class="form-group">
-                <label for="otherTextArea">Enter Emergency</label>
-                <textarea class="form-control rounded-0" id="otherTextArea" rows="3"></textarea>
-            </div> -->
+
         </form>
     </div>
 
@@ -97,16 +100,3 @@ functionality of the rest. -->
 </body>
 
 </html>
-
-
-<script>
-    $.get("includes/getSessionInfo.php", function(data,status) {
-        
-        if (data.level == '1') {
-            $('#dismissButton').show();
-        } else {
-            $('#dismissButton').hide();
-        }
-
-    }, 'json');
-</script>

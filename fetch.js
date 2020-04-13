@@ -78,7 +78,7 @@ $(document).ready(function () {
     
 
    
-    $('#dismissModal').click(function () {
+    $('#dismissButton').click(function () {
         console.log('dismiss');
         load_unseen_notification('NO', '6');
     });
