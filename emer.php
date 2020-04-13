@@ -77,13 +77,13 @@ session_start();
 
     <!-- Form Buttons-->
     <div>
-        <div class="col-md-8 mt-2  mx-auto w-50">
+        <div class="col-6 col-md-4 mt-2  mx-auto w-50">
             <!-- Cancel button  clears form -->
-            <button type="reset" class="btn btn-primary" form="EmerForm" style="width: 75px" id="cancel">Cancel</button>
+            <button type="reset" class="btn btn-primary" form="EmerForm" style="width: 70px" id="cancel">Cancel</button>
             <!-- submit button  launches confirmation modal -->
-            <button type="reset" class="btn btn-primary" style="width: 75px"  id="submitModal2">Submit</button>
+            <button type="reset" class="btn btn-primary" style="width: 70px"  id="submitModal2">Submit</button>
         </div>
-        <div id='dismissModal' class="col-md-8 mt-1  mx-auto w-50">
+        <div id='dismissModal' class="col-6 col-md-4 mt-1 mx-auto">
             <!-- Dismiss button   dismisses curerent emergency alert (ADMIN ONLY) -->
             <button type="reset" class="btn btn-primary mt-5 mx-auto"  >Dismiss Emergency</button>
         </div>
