@@ -1,5 +1,5 @@
 <?php
-require_once('../db_connect.php');
+// require_once('../db_connect.php');
 session_start();
 
 $data =array(
@@ -9,5 +9,7 @@ $data =array(
 );
 
 echo json_encode($data);
+
+// oci_close($conn);
 
 ?>

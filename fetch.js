@@ -47,13 +47,6 @@ $(document).ready(function () {
 
     load_unseen_notification();
 
-    // $('#submitModal1').click(function(){
-    //     $('#submitModal1').attr('disabled',true);
-    //     $('#dissmissmodal').attr('disabled',true);
-
-    // });
-
-
 
     $('#submitModal2').click(function () {
 
@@ -77,23 +70,6 @@ $(document).ready(function () {
 
 
 
-
-    /*     $('#emergency').click(function(){
-           
-            $.get("includes/getSessionInfo.php", function (data, status) {
-                console.log(data.name);
-                console.log(data.level);
-                if(data.level == '1'){
-                    $('#dismissModal').show();
-                }else{
-                    $('#dismissModal').hide();
-                }
-    
-            },'json');
-        });
-     */
-
-
     //this is for the dismiss button not for a modal
 
     $('#emergency').click(function () {
@@ -107,11 +83,9 @@ $(document).ready(function () {
             }
         }, 'json');
     });
-
-
-    $('#dismissModal').click(function () {
+  
+    $('#dismissButton').click(function () {
         console.log('dismiss');
-        // $('.count').html('');
         load_unseen_notification('NO', '6');
     });
 

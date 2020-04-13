@@ -41,7 +41,7 @@
         </a>
 
         <!--Emergency Button-->
-        <a type="button" href="emer.php" class="btn btn-danger" id="emergency">Emergency</a>
+        <a href="emer.php" class="btn btn-danger" id="emergency">Emergency</a>
 
 
     </div>

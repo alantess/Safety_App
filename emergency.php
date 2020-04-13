@@ -23,7 +23,6 @@ if(isset($_POST['view'])){
         if ($_SESSION['userlevel'] == 1) {
             $t_end = date(DATE_RFC822);
             $_seen = 'NO';
-            // $query = "UPDATE ALERT_LOG SET T_END = :t_end WHERE T_END IS NULL";
             $query = "UPDATE ALERT_LOG SET IS_ACT = 'N', T_END = :t_end WHERE T_END IS NULL";
             $stid = oci_parse($conn, $query);
             oci_bind_by_name($stid, ':t_end', $t_end);
@@ -35,13 +34,10 @@ if(isset($_POST['view'])){
             oci_execute($stid);
             $result = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
             $isact = $result['IS_ACT'];
-            // $cat = $result['CAT'];
 
             // echo json_encode($data);
             oci_free_statement($stid);
 
-
-        }else{
 
         }
        
