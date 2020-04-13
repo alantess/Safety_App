@@ -109,12 +109,16 @@ if(isset($_POST['view'])){
                     break;
                     case 4:
                     break;
+                    case 5:
+                    break;
+                    case 6:
+                    break;
                     default:
                 
                 }
                 
             }else{
-                $cat = 4;
+                $cat = 7;
             }
 
         

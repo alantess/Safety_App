@@ -9,24 +9,30 @@ $(document).ready(function () {
             data: { view: view, options: options },
             dataType: "json",
             success: function (data) {
+
                 console.log(data.act)
                 console.log(data.alert)
                 console.log(data.cat)
 
                 if (data.act == 'Y') {
+
                     console.log('ajax call was success');
-                    $('#banner').html(data.alert);
-                    console.log(data.act);
-                    // if (data.cat == '0') {
-                    //     delay = 0;
-                    //     refresh(delay);
-                    // } else if (delay.cat == '1') {
-                    //     delay = 1;
-                    //     refresh(delay);
-                    // } else if (delay.cat == '2') {
-                    //     delay = 2;
-                    //     refresh(delay);
-                    // }
+                    
+                    if(data.cat == '0' || data.cat == '1' || data.cat == '2'){
+                        $('#banner').html(data.alert);
+                        console.log(data.alert);
+                    }else if(data.cat == '3'|| data.cat == '4' || data.cat =='5'){
+
+                        console.log(data.alert);
+                    }else if (data.cat == '6'){
+                        console.log(data.comment)
+
+                        // $('.dropdown-menu').append(
+                            
+                        //     '<p class="dropdown-itme">'+data.comment+'</p>'
+                        // );
+                    }
+                   
 
                 } else {
                     $('#banner').empty();
@@ -40,6 +46,13 @@ $(document).ready(function () {
 
 
     load_unseen_notification();
+
+    // $('#submitModal1').click(function(){
+    //     $('#submitModal1').attr('disabled',true);
+    //     $('#dissmissmodal').attr('disabled',true);
+
+    // });
+
 
 
     $('#submitModal2').click(function () {
@@ -58,14 +71,12 @@ $(document).ready(function () {
         } else if (radioValue == 'option5') {
             load_unseen_notification('YES', '5');
         } 
+
         // load_unseen_notification('YES');
     });
 
 
-    // $('#submitModal1').click(function(){
-    //     $('#EmergencyModal').modal('hide');
-    //     $('#modalVarification').modal('show');
-    // });
+
 
     /*     $('#emergency').click(function(){
            
@@ -92,6 +103,7 @@ $(document).ready(function () {
             console.log(data.level);
             if (data.level == '1') {
 
+
                 $('#dismissModal').show(); //not working
                 
             } else {
@@ -100,6 +112,7 @@ $(document).ready(function () {
                 
             }
         }, 'json');
+
     });
 
 

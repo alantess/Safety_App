@@ -43,6 +43,7 @@
         <!--Emergency Button-->
         <a type="button" href="emer.php" class="btn btn-danger" id="emergency">Emergency</a>
 
+
     </div>
 </nav>
 <!--- End Navigation -->
