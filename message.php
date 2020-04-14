@@ -130,9 +130,7 @@ include('db_connect.php');
 
 
     <script>
-$('#scroll').animate({
-    scrollTop: $('#scroll').get(0).scrollHeight
-}, 200);
+
 
       function timeout_trigger() {
         $('#message').val('');
@@ -144,9 +142,7 @@ $('#scroll').animate({
       }
 
       function timeout_init() {
-        $('#scroll').animate({
-        scrollTop: $('#scroll').get(0).scrollHeight
-    }, 2000);
+  
         setTimeout('timeout_trigger()', 400);
       }
     </script>
