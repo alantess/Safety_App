@@ -116,8 +116,27 @@
 	
 	.messages{
 		overflow-y: scroll;
+		overflow:auto;
 		height: 350px;
+		-webkit-animation-name: move;
+    	-webkit-animation-duration: 4s;
+    	-webkit-animation-iteration-count: infinite;
+    	-webkit-animation-direction: right;
+    	-webkit-animation-timing-function: linear;
 	}
+
+	.messages:hover {
+    	-webkit-animation-play-state: paused;
+    }
+    
+    @-webkit-keyframes move {
+    	0% {
+    		margin-top: -400px;
+    	}
+    	100% {
+    		margin-bottom: 800px;
+    	}
+    }
 	.message-box{
 		margin: 0;
 		padding: 0;
