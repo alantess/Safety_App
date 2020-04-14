@@ -23,7 +23,7 @@
                     <a class="nav-link" href="message.php" id="messagesT">Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="settings.php">Settings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Help</a>
