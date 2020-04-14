@@ -10,9 +10,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
 
-                console.log(data.act);
-                console.log(data.alert);
-                console.log(data.cat);
 
                 if (data.act == 'Y') {
 
@@ -23,12 +20,10 @@ $(document).ready(function () {
                         console.log(data.alert);
                     }else if(data.cat == '3'|| data.cat == '4' || data.cat =='5'){
                         $('.dropdown-menu').html(data.alert);
-                        if (data.count > 0) {
-                            $('.count').html(data.count);
-                        }
+                        // if (data.count > 0) {
+                        //     $('.count').html(data.count);
+                        // }
 
-
-                        console.log(data.alert);
                     }else if (data.cat == '6'){
                         console.log(data.comment)
 
@@ -50,7 +45,7 @@ $(document).ready(function () {
     }
 
 
-    load_unseen_notification();
+    // load_unseen_notification();
 
     // $('.dropdown-toggle').click( function () {
     //     $('.count').html('');
@@ -64,7 +59,7 @@ $(document).ready(function () {
 
     $('#submitEmergency').click(function () {
 
-        var radioValue = $('form input:checked').val();
+        var radioValue = $('#EmerForm input:checked').val();
         if (radioValue == 'option0') {
             load_unseen_notification('YES', '0');
         } else if (radioValue == 'option1') {
@@ -87,6 +82,7 @@ $(document).ready(function () {
     $('#dismissButton').click(function () {
         console.log('dismiss');
         load_unseen_notification('NO', '6');
+        window.history.back();
     });
 
     // var shooter = 8200;

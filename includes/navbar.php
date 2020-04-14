@@ -34,17 +34,14 @@
             </ul>
         </div>
 
-    
-            
-                <!--Notification Bell-->
-                <a href="#" class="navbar-brand dropdown-toggle" data-toggle="dropdown-menu" id="alert">
-                    <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
-                    <i class="material-icons" style="font-size:36px">notifications</i>
-                </a>
-                <ul class="dropdown-menu">
-                </ul>
-            
-      
+
+
+        <!--Notification Bell-->
+        <a href="#" class="navbar-brand" id="alert">
+            <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
+            <i class="material-icons" style="font-size:36px">notifications</i>
+        </a>
+        
 
         <!--Emergency Button-->
         <a href="emer.php" class="btn btn-danger" id="emergency">Emergency</a>

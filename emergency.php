@@ -119,7 +119,8 @@ if(isset($_POST['view'])){
         $data = array(
             'alert' => $output,
             'act' => $isact,
-            'cat' => $cat
+            'cat' => $cat,
+            
         );
         echo json_encode($data);
         oci_free_statement($stid);
