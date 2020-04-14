@@ -150,7 +150,7 @@ include('db_connect.php');
     <!-- Form to send messages -->
 
 
-    <div class="center-chat">
+    <div class="center-chat ">
 
       <div class="wrap" id="wrap">
         <div class="dot dot-1"></div>
@@ -167,7 +167,7 @@ include('db_connect.php');
         </defs>
       </svg>
 
-      <div class="messages">
+      <div class="messages mt-5 pt-5 mx-auto">
         <ul class='message-box' id="messages"></ul>
 
       </div>
