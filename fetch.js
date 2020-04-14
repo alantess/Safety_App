@@ -91,21 +91,17 @@ $(document).ready(function () {
     // var timedelay = 5000;
 
 
+    
 
+    $("#registerButton").click(function () {
+        $.post("register.php", function (data, status) {
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
 
-     $('#registerButton').click(function () {
-         console.log('this button was clicked');
-         $.get("register.php", function (data) {
-            console.log('regiseter query was success');
-             console.log(data.errMSG);
-             console.log(data.userError);
-             console.log(data.$emailError);
-             console.log(data.$passError);
-             console.log(data.error);
+    
 
-         }, 'json');
-
-     })
+    
 
     setInterval(function () {
         load_unseen_notification();;

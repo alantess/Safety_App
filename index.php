@@ -15,7 +15,7 @@ session_start();
 
     <!-- bootstrap code -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -35,8 +35,9 @@ session_start();
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="fetch.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/index.css">
+
 </head>
 
 <body>
@@ -44,41 +45,8 @@ session_start();
 
     </div>
 
-    <!-- <div id="content" data-target="#navbarNavAltMarkup"></div> -->
-    <div id="content" data-target="#navbarNavAltMarkup">
-        <!-- register modal -->
-        <!-- <article class="card-body">
-                <form id="login-form" class="modal" role="form" action="register.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="password1" name="password1">
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="password2" name="password2">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="firstname">First Name:</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name:</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="signup btn btn-primary btn-block">Sign Up</button>
-                    </div>
-                </form> -->
-
+    <!-- <div id="content" data-target="#navbarNavAltMarkup"> -->
+        
         <!-- rel="modal:open -->
         <article class="card-body">
             <a class="float-right btn btn-outline-primary id" data-toggle="modal" data-target="#registerForm"> Sign up </a>
@@ -99,11 +67,9 @@ session_start();
                     <button type="submit" class="btn btn-primary btn-block" value="Submit"> Login </button>
                 </div>
             </form>
+
         </article>
     </div>
-
-
-
 
     <!-- ------------------------------------------------------------------------------------- -->
 
@@ -112,18 +78,14 @@ session_start();
 
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <!-- <article class="card-body"> -->
-                <!-- <a href="" class="float-right btn btn-outline-primary">Sign up</a>
-                <h4 class="card-title mb-4 mt-1">Sign in</h4> -->
                 <div class="modal-header">
-                    <!-- <h5 class="modal-title">Sign Up</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    <form id="login-form" action="./register.php" method="post">
+                    <form id="register-form" action="register.php" method="POST">
                         <div class="form-group">
                             <label for="username">Username:</label>
                             <input type="text" class="form-control" id="username" name="username" required>
@@ -150,10 +112,12 @@ session_start();
                             <input type="text" class="form-control" id="lastname" name="lastname" required>
                         </div>
                         <div class="form-group">
-                            <button type="submit" value='Submit' id="registerButton" name='registerButton' class="signup btn btn-primary btn-block" data-dismiss="modal">Sign Up</button>
+                            <button type="submit" value='Submit' id="registerButton" name='registerButton' class="signup btn btn-primary btn-block">Sign Up</button>
                         </div>
+
+
                     </form>
-                    <!-- </article> -->
+                    
                 </div>
 
             </div>
@@ -162,3 +126,4 @@ session_start();
 </body>
 
 </html>
+<script src="fetch.js"></script>
