@@ -163,7 +163,7 @@ $('#scroll').animate({
     <!-- Form to send messages -->
 
 
-    <div class="center-chat">
+    <div class="center-chat ">
 
       <div class="wrap" id="wrap">
         <div class="dot dot-1"></div>
@@ -179,7 +179,6 @@ $('#scroll').animate({
           </filter>
         </defs>
       </svg>
-
 
       <div class="messages" id='scroll'>
 
