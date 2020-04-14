@@ -57,7 +57,6 @@ if(isset($_POST["submit"])){
         echo 'Please Select At Least One Student';
     }
     
-    
 }
       
     // free query and close connection

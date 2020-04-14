@@ -3,7 +3,20 @@ session_start();
 require_once('db_connect.php');
 $error = false;
 
+if(isset($_POST['registerButton'])){
 
+    $data = array(
+        'username' => $_POST['username'],
+        'email' => $_POST['email'],
+        'password' => $_POST['password1'],
+        'firstname' => $_POST['firstname'],
+        'lastname' => $_POST['lastname']
+    );
+
+    echo json_encode($data);
+
+
+}
 // prevent sql injections/ clear user invalid inputs
 $username = trim($_POST['username']);
 $username = strip_tags($username);
@@ -30,7 +43,7 @@ $lastname = trim($_POST['lastname']);
 $lastname = strip_tags($lastname);
 $lastname = htmlspecialchars($lastname);
 
-if (empty($username)|| preg_match('/\s/',$username)|| strlen($username)< 3 || strlen($username) > 20) {
+if (empty($username)|| preg_match('/\s/',$username)|| strlen($username)<= 3 || strlen($username) >= 20) {
     $error = true;
     $userError = "Please enter valid user name.";
     echo $userError;
@@ -118,6 +131,16 @@ if(!$error){
     $errMSG = "Incorrect Credentials, Try again...";
     echo $errMSG;
 }
+
+// $data = array(
+//     'errMSG' => $errMSG,
+//     'userError' => $userError,
+//     'emailError' => $emailError,
+//     'passError' => $passError,
+//     'error' => $error
+// );
+
+// echo json_encode($data);
 
 oci_close($conn);
 

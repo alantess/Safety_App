@@ -90,6 +90,23 @@ $(document).ready(function () {
     // var tornado = 9000;
     // var timedelay = 5000;
 
+
+
+
+     $('#registerButton').click(function () {
+         console.log('this button was clicked');
+         $.get("register.php", function (data) {
+            console.log('regiseter query was success');
+             console.log(data.errMSG);
+             console.log(data.userError);
+             console.log(data.$emailError);
+             console.log(data.$passError);
+             console.log(data.error);
+
+         }, 'json');
+
+     })
+
     setInterval(function () {
         load_unseen_notification();;
         console.log('setInterval again');
