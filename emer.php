@@ -82,7 +82,7 @@ functionality of the rest. -->
             <!-- Cancel button  clears form -->
             <button type="reset" class="btn btn-primary" form="EmerForm" style="width: 70px" id="cancel">Cancel</button>
             <!-- submit button  launches confirmation modal -->
-            <button type="reset" class="btn btn-primary" style="width: 70px" id="submitModal2">Submit</button>
+            <button type="reset" class="btn btn-primary" style="width: 70px" id="submitmodal1" data-toggle="modal" data-target="#modalValidation">Submit</button>
         </div>
         <div id='dismissButton' class="col-6 col-md-4 mt-1 mx-auto">
             <!-- Dismiss button   dismisses curerent emergency alert (ADMIN ONLY) -->
@@ -92,11 +92,44 @@ functionality of the rest. -->
 
     <!-- Emergency Confirmation Modal -->
 
+    <!-- Small modal -->
 
-    <footer>
-        <!-- LEAVE THIS-->
-        <?php include 'includes/foot.php'; ?>
-    </footer>
+    <div class="modal fade " tabindex="-1" role="dialog" id="modalValidation">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Emergency Validation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <Form>
+                        <!-- verification submit -->
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                Are you sure you want to submit this emergency.
+                            </label>
+                        </div>
+                    </Form>
+                </div>
+                <div class="modal-footer">
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <!-- Cancel button -->
+                        <button type="button" class="btn btn-primary mr-auto" id='cancelModal' data-dismiss="modal">Cancel</button>
+
+                        <!-- Submit Button -->
+                        <button type="button" class="btn btn-primary mr-auto" id ='submitEmergency' data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer>
+                <!-- LEAVE THIS-->
+                <?php include 'includes/foot.php'; ?>
+            </footer>
 </body>
 
 </html>
