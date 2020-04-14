@@ -10,9 +10,6 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
 
-                console.log(data.act)
-                console.log(data.alert)
-                console.log(data.cat)
 
                 if (data.act == 'Y') {
 
@@ -22,8 +19,11 @@ $(document).ready(function () {
                         $('#banner').html(data.alert);
                         console.log(data.alert);
                     }else if(data.cat == '3'|| data.cat == '4' || data.cat =='5'){
+                        $('.dropdown-menu').html(data.alert);
+                        // if (data.count > 0) {
+                        //     $('.count').html(data.count);
+                        // }
 
-                        console.log(data.alert);
                     }else if (data.cat == '6'){
                         console.log(data.comment)
 
@@ -45,12 +45,21 @@ $(document).ready(function () {
     }
 
 
-    load_unseen_notification();
+    // load_unseen_notification();
+
+    // $('.dropdown-toggle').click( function () {
+    //     $('.count').html('');
+    //     // load_unseen_notification('YES');
+    // });
 
 
-    $('#submitModal2').click(function () {
+    $('#cancel').click(function(){
+        window.history.back();
+    });
 
-        var radioValue = $('form input:checked').val();
+    $('#submitEmergency').click(function () {
+
+        var radioValue = $('#EmerForm input:checked').val();
         if (radioValue == 'option0') {
             load_unseen_notification('YES', '0');
         } else if (radioValue == 'option1') {
@@ -64,29 +73,16 @@ $(document).ready(function () {
         } else if (radioValue == 'option5') {
             load_unseen_notification('YES', '5');
         } 
-
-        // load_unseen_notification('YES');
+        // sends the user back to previous page after launch
+        window.history.back();
+        
     });
 
 
-
-    //this is for the dismiss button not for a modal
-
-    $('#emergency').click(function () {
-        $.get("includes/getSessionInfo.php", function (data) {
-            console.log(data.name);
-            console.log(data.level);
-            if (data.level == '1') {
-                $('#dismissModal').show(); //not working
-            } else {
-                $('#dismissModal').hide(); //not working
-            }
-        }, 'json');
-    });
-  
     $('#dismissButton').click(function () {
         console.log('dismiss');
         load_unseen_notification('NO', '6');
+        window.history.back();
     });
 
     // var shooter = 8200;

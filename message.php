@@ -51,9 +51,11 @@ include('db_connect.php');
       var myName = name;
 
       function sendMessage() {
+
         $('#scroll').animate({
         scrollTop: $('#scroll').get(0).scrollHeight
     }, 2000);
+
         // get message
         var message = document.getElementById("message").value;
         var today = new Date();
@@ -119,13 +121,13 @@ include('db_connect.php');
       // attach listener for delete message
       firebase.database().ref("messages").on("child_removed", function(snapshot) {
         // remove message node
-        
-      while (document.getElementById("message-" + snapshot.key).firstChild){
-        document.getElementById("message-" + snapshot.key).removeChild(document.getElementById("message-" + snapshot.key).firstChild)
-      } 
-        document.getElementById("message-" + snapshot.key).style.opacity='0';
-       
-        
+
+        while (document.getElementById("message-" + snapshot.key).firstChild) {
+          document.getElementById("message-" + snapshot.key).removeChild(document.getElementById("message-" + snapshot.key).firstChild)
+        }
+        document.getElementById("message-" + snapshot.key).style.opacity = '0';
+
+
       });
     </script>
 
@@ -146,9 +148,11 @@ $('#scroll').animate({
       }
 
       function timeout_init() {
+
         $('#scroll').animate({
         scrollTop: $('#scroll').get(0).scrollHeight
     }, 2000);
+
         setTimeout('timeout_trigger()', 400);
       }
     </script>
@@ -176,7 +180,9 @@ $('#scroll').animate({
         </defs>
       </svg>
 
+
       <div class="messages" id='scroll'>
+
         <ul class='message-box' id="messages"></ul>
 
       </div>
@@ -199,7 +205,7 @@ $('#scroll').animate({
         <?php include 'includes/foot.php'; ?>
       </footer>
 
-	
+
 
 </body>
 

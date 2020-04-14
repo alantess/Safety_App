@@ -9,7 +9,7 @@
 
         <!--Home Button-->
         <a class="navbar-brand" href="home.php">Home</a>
-        
+
         <!--Navigation menu-->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -34,11 +34,14 @@
             </ul>
         </div>
 
+
+
         <!--Notification Bell-->
         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
             <i class="material-icons" style="font-size:36px">notifications</i>
         </a>
+        
 
         <!--Emergency Button-->
         <a href="emer.php" class="btn btn-danger" id="emergency">Emergency</a>
