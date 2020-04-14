@@ -18,7 +18,7 @@ functionality of the rest. -->
     </header>
 
     <!-- Google Calendar -->
-    <div mbsc-page class="demo-google-calendar">
+    <div mbsc-page class="demo-google-calendar mt-5 pt-5 mx-auto">
         <div id="demo-google-cal-form">
             <div class="mbsc-grid">
                 <div class="mbsc-row">
