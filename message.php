@@ -83,8 +83,8 @@ include('db_connect.php');
       // listen for incoming messages
       firebase.database().ref("messages").on("child_added", function(snapshot) {
         $('#scroll').animate({
-    scrollTop: $('#scroll').get(0).scrollHeight
-}, 200);
+          scrollTop: $('#scroll').get(0).scrollHeight
+        }, 200);
         var html = "";
         // give each message a unique ID
         if (snapshot.val().sender != myName) {
