@@ -3,11 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php 
-     
+    <?php
     require_once('db_connect.php');
     include 'includes/head.php';
-   
        ?>
 </head>
 

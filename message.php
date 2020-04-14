@@ -16,7 +16,7 @@ include('db_connect.php');
   </header>
 
 
-  <div id="content" data-target="#navbarNavAltMarkup">
+  <div id="content" class="mt-5 pt-5 mx-auto" data-target="#navbarNavAltMarkup">
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
@@ -51,7 +51,7 @@ include('db_connect.php');
       var myName = name;
 
       function sendMessage() {
-        
+
         // get message
         var message = document.getElementById("message").value;
         var today = new Date();
@@ -117,21 +117,19 @@ include('db_connect.php');
       // attach listener for delete message
       firebase.database().ref("messages").on("child_removed", function(snapshot) {
         // remove message node
-        
-      while (document.getElementById("message-" + snapshot.key).firstChild){
-        document.getElementById("message-" + snapshot.key).removeChild(document.getElementById("message-" + snapshot.key).firstChild)
-      } 
-        document.getElementById("message-" + snapshot.key).style.opacity='0';
-       
-        
+
+        while (document.getElementById("message-" + snapshot.key).firstChild) {
+          document.getElementById("message-" + snapshot.key).removeChild(document.getElementById("message-" + snapshot.key).firstChild)
+        }
+        document.getElementById("message-" + snapshot.key).style.opacity = '0';
+
+
       });
     </script>
 
 
 
     <script>
-
-
       function timeout_trigger() {
         $('#message').val('');
         $(".wrap").css("visibility", "visible ");
@@ -142,7 +140,7 @@ include('db_connect.php');
       }
 
       function timeout_init() {
-  
+
         setTimeout('timeout_trigger()', 400);
       }
     </script>
@@ -193,7 +191,7 @@ include('db_connect.php');
         <?php include 'includes/foot.php'; ?>
       </footer>
 
-	
+
 
 </body>
 
