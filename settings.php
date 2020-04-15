@@ -21,11 +21,14 @@ functionality of the rest. -->
   $.get("includes/getSessionInfo.php", function(data) {
     document.getElementById('usrLvl').innerHTML = data.level;
     if (data.level == '1') {
+      // Admin Level --- Show the table to change user level
       $('#adminSettings').show();
     } else if (data.level == '2') {
+      // Teacher Level -- Only Show Name and Current Level
       $('#adminSettings').hide();
     } else {
-     // $('#settings').hide();
+      // Zero Level -- dont show anything
+      $('#settings').hide();
     }
 
   }, 'json');
@@ -48,19 +51,19 @@ functionality of the rest. -->
     <div class="text-center">
 
       <b>
-        <h1>Hi <?php echo  $_SESSION['username'] ?></h1>
+        <h2>Hi <?php echo ucfirst($_SESSION['username'])?></h2>
       </b>
-      <h2>Level:<h2 id='usrLvl'></h2>
-      </h2>
+      <h2>Level:<strong id='usrLvl'></strong></h2>
+
       <!--Admit Setting -->
       <form id="usrForm" method='post'>
         <div class="form-group">
           <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
               <thead class="tbl-header">
-                <th scope="col">Name</th>
-                <th scope="col">Current Level</th>
-                <th scope="col">Update Level</th>
+                <th class="text-center" scope="col">Name</th>
+                <th class="text-center" scope="col">Current Level</th>
+                <th class="text-center" scope="col">Update Level</th>
 
                 </tr>
               </thead>
@@ -85,9 +88,9 @@ functionality of the rest. -->
 
                         <tr>
                         
-                        <td ><label for='usrName[]'>$name</label></td> 
+                        <td class='text-center' ><label for='usrName[]'>$name</label></td> 
                         <input style='display:none' ype='text' name='usrName[]' value='$name'/>
-                        <td>$level</td>
+                        <td class='text-center'>$level</td>
                         <td>    
                         <select name= 'lvl[]' class='form-control'>";
                         if($level == '0'){echo"
@@ -118,7 +121,7 @@ functionality of the rest. -->
                   echo "            </tbody>
                  
                   </table>
-              </div><input class='btn btn-success' type='submit' name='submit' value='Submit' />
+              </div><input style='margin:45px;background-color:#308A20' class='btn btn-success' type='submit' name='submit' value='Submit' />
           </form>";  ?>
 <script>
 $("#usrForm").on('submit', function(event) {
@@ -201,14 +204,15 @@ $("#usrForm").on('submit', function(event) {
       }
 
       .tbl-header {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: #567AA3;
       }
 
       .tbl-content {
+        background-color: #253C57;
         height: 300px;
         overflow-x: auto;
         margin-top: 0px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid #567AA3;
       }
 
       th {
@@ -227,7 +231,7 @@ $("#usrForm").on('submit', function(event) {
         font-weight: 300;
         font-size: 12px;
         color: #fff;
-        border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+        border-bottom: solid 1px #F0DA67;
       }
 
 
@@ -239,6 +243,7 @@ $("#usrForm").on('submit', function(event) {
         background: white;
         background: white;
         font-family: 'Roboto', sans-serif;
+        overflow-x: none;
       }
 
       section {
