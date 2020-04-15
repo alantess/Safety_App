@@ -4,6 +4,8 @@ require_once('db_connect.php');
 $error = false;
 
 
+
+
 // prevent sql injections/ clear user invalid inputs
 $username = trim($_POST['username']);
 $username = strip_tags($username);
@@ -30,7 +32,7 @@ $lastname = trim($_POST['lastname']);
 $lastname = strip_tags($lastname);
 $lastname = htmlspecialchars($lastname);
 
-if (empty($username)|| preg_match('/\s/',$username)|| strlen($username)< 3 || strlen($username) > 20) {
+if (empty($username)|| preg_match('/\s/',$username)|| strlen($username)<= 3 || strlen($username) >= 20) {
     $error = true;
     $userError = "Please enter valid user name.";
     echo $userError;
@@ -99,18 +101,35 @@ if(!$error){
     oci_bind_by_name($stid,":lname",$lastname);    
 
     oci_execute($stid);
-    echo $username;
-    echo $pass ;
-    echo $email;
 
+    oci_free_statement($stid);
 
-    print "created new user";
-    $_SESSION['username'] = $username;
-    $_SESSION['loggedin'] = 'true';
+    // salting and hashing passwords
+    $salt = "ThisIsASalt";
+    $password = hash('sha256', $pass . $salt); // password hashing using SHA256
+
+    // oracle query
+    $query = "SELECT * FROM login where username = '$username' and password = '$password'";
+    $stid = oci_parse($conn, $query);
+    oci_execute($stid);
+    $row = oci_fetch_array($stid, OCI_ASSOC);
+
+    echo $row['PASSWORD'];
+    // check query return
+    if ($row['PASSWORD'] === $password) {
+        $_SESSION['username'] = $row['USERNAME'];
+        $_SESSION['userlevel'] = $row['USER_LVL'];
+        $_SESSION['firstname'] = $row['FNAME'];
+        $_SESSION['lastname'] = $row['LNAME'];
+        $_SESSION['userid'] = $row['USER_ID'];
+        $_SESSION['loggedin'] = 'true';
+        header("location:home.php");
+   
+    }
 
     // free the query and close the oracle connection
     oci_free_statement($stid);
-    header('location: home.php');
+    // header('location: home.php');
 
 
 }else{
@@ -118,6 +137,16 @@ if(!$error){
     $errMSG = "Incorrect Credentials, Try again...";
     echo $errMSG;
 }
+
+$data = array(
+    'errMSG' => $errMSG,
+    'userError' => $userError,
+    'emailError' => $emailError,
+    'passError' => $passError,
+    'error' => $error
+);
+
+echo json_encode($data);
 
 oci_close($conn);
 

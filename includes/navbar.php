@@ -8,11 +8,14 @@
         </button>
 
         <!--Home Button-->
-        <a class="navbar-brand" href="home.php">Home</a>
+        <a class="navbar-brand" href="#">SchoolSafe</a>
 
         <!--Navigation menu-->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a class="nav-link" href="home.php">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="calendar.php">Calendar</a>
                 </li>
@@ -37,10 +40,10 @@
 
 
         <!--Notification Bell-->
-        <a href="#" class="navbar-brand" id="alert">
+<!--         <a href="#" class="navbar-brand" id="alert">
             <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
             <i class="material-icons" style="font-size:36px">notifications</i>
-        </a>
+        </a> -->
         
 
         <!--Emergency Button-->
