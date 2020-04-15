@@ -1,10 +1,3 @@
-<!-- This is a blank template for us to use.
-Add what you need but leave the calls that are marked. 
-Just copy and paste the code below to ensure the new page has the basic
-functionality of the rest. -->
-
-
-
 <!DOCTYPE html>
 <html>
 
