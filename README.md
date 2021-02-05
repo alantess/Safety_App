@@ -1,3 +1,3 @@
 # Safety_App
 SafetyApp
-Checkout the final documentation for more info.
+Checkout the [documentation](Final Documentation.pdf) for more info. 
